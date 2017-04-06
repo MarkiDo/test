@@ -1,7 +1,7 @@
 {
   "project": {
     "version": "1.0.0-beta.28.3",
-    "name": "ita-cloud-lv"
+    "name": "ita-cloud-lv-232"
   },
   "apps": [
     {
@@ -16,7 +16,7 @@
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
-      "prefix": "app",
+      "prefix": "ita",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "../node_modules/font-awesome/css/font-awesome.css",
