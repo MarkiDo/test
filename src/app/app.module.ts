@@ -8,11 +8,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './commons/header/header.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
