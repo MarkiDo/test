@@ -8,15 +8,15 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './commons/header/header.component';
-import { ServiceConfComponent } from './service-conf/service-conf.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdministrationComponent } from './administration/administration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ServiceConfComponent,
-    AdministrationComponent
+    AdministrationComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -28,8 +28,8 @@ import { AdministrationComponent } from './administration/administration.compone
     MaterialModule,
     RouterModule.forRoot([
       {
-        path: 'serviceconf',
-        component: ServiceConfComponent
+        path: 'dashboard',
+        component: DashboardComponent
       },
       {
         path: 'administration',
