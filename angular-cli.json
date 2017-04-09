@@ -18,11 +18,17 @@
       "tsconfig": "tsconfig.json",
       "prefix": "ita",
       "styles": [
+      "styles/base/_variables.scss",
+      "styles/helpers/_mixins.scss",
       "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+      "../node_modules/hamburgers/dist/hamburgers.min.css",
       "../node_modules/font-awesome/css/font-awesome.css",
+      "styles/vendor_extension/bootstrap.scss",
       "styles.css"
       ],
       "scripts": [
+      "../node_modules/jquery/dist/jquery.js",
+      "../node_modules/bootstrap/dist/js/bootstrap.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
