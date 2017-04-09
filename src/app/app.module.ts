@@ -11,8 +11,6 @@ import { HeaderComponent } from './commons/header/header.component';
 import { ServiceConfComponent } from './service-conf/service-conf.component';
 import { AdministrationComponent } from './administration/administration.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
