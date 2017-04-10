@@ -1,0 +1,21 @@
+<nav class="navbar navbar-toggleable-md navbar-light ita-header">
+  <div class="container">
+    <button class="hamburger hamburger--collapse" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" [ngClass]=" buttonState === true ? 'is-active': 'collapsed'"
+      (click)="clickButton()">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <a routerLink="/" class="navbar-brand">ita claud</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a routerLink="/dashboard" class="nav-item nav-link" routerLinkActive="active-link">
+          <span>Service Configuration</span>
+        </a>
+        <a routerLink="/administration" class="nav-item nav-link" routerLinkActive="active-link">
+          <span>Administration</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

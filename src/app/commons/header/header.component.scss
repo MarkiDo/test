@@ -1,0 +1,43 @@
+@import '../../../styles/base/_variables.scss';
+@import '../../../styles/helpers/_mixins.scss';
+
+.ita-header {
+  border-bottom: 0.125rem solid $borderColor;
+  .container {
+    @include respond-to($xs-575-max) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .navbar-brand {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+  .nav-link {
+    font-size: 1.25rem;
+    color: $defTextColor;
+    text-align: center;
+    &.active-link {
+      span {
+        border-bottom: 0.25rem solid $activeLink;
+      }
+    }
+  }
+  .hamburger {
+    display: none;
+    @include respond-to($sm-max) {
+      display: inline-block;
+      float: right;
+      padding: 0.3125rem;
+    }
+  }
+  .hamburger-inner,
+  .hamburger-inner:after,
+  .hamburger-inner:before {
+    width:  2rem;
+    height: 0.1875rem;
+  }
+  .hamburger-box {
+    width: 2rem;
+  }
+}
