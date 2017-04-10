@@ -5,8 +5,20 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   {
-    path:'dashboard',
-    component: DashboardComponent, 
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: 'administration',
+    component: AdministrationComponent
+  },
+  {
+    path:'UserTimeSettings',
+    component: ItaUserTimeSettingsComponent
+  },
+  {
+    path:'UserLanguage',
+    component: ItaUserLanguageComponent
   }
 ];
 
