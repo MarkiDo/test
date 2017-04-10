@@ -6,17 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-	buttonActive: number;
+	buttonActive: boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
-  clickButton(newValue: number) {
-    if (this.buttonActive === newValue) {
-      this.buttonActive = 0;
+  clickButton(buttonActive: boolean): boolean {
+    if (this.buttonActive === true) {
+      return this.buttonActive = false;
     }
     else {
-      this.buttonActive = newValue;
+      return this.buttonActive = !this.buttonActive;
     }
   }
 }
