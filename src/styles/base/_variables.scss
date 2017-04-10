@@ -1,12 +1,23 @@
-/* color for active links in header */
-$orangePeel: #F6A201;
-$activeLink: $orangePeel;
-$widgetHover: $orangePeel;
-
-/* main color for borders etc*/
+/** write here reusable colors **/
+/** use colorhexa.com to get color name by hex code **/
+$white: #FFF;
 $navajoWhite: #FFE3AC;
-$borderColor: $navajoWhite;
-
-/* default color for text*/
+$darkGray: #888888;
+$softOrange: #f3c66e;
+$orangePeel: #F6A201;
+$vividOrange: #f09a0f;
 $black: #000;
+/***************************************/
+/* color for active links in header */
+$activeLink: $orangePeel;
+/*User Settings Component*/
+$userSettingsBoxShadow: $darkGray;
+$userSettingsBoxBorder: $softOrange;
+$userSettingsItemHoverText: $white;
+$userSettingsItemHoverShadow: $vividOrange;
+/* main color for borders etc*/
+$borderColor: $navajoWhite;
+/* default color for text*/
 $defTextColor: $black;
+
+$widgetHover: $orangePeel;
