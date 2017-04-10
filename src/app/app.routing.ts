@@ -7,18 +7,6 @@ const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
-  },
-  {
-    path: 'administration',
-    component: AdministrationComponent
-  },
-  {
-    path:'UserTimeSettings',
-    component: ItaUserTimeSettingsComponent
-  },
-  {
-    path:'UserLanguage',
-    component: ItaUserLanguageComponent
   }
 ];
 
