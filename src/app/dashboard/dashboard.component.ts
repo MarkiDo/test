@@ -7,7 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  emailScheduler: string;
+  serversConfigurator: string;
+  statusEmailScheduler:string;
+  statusServersConfigurator: string;
+  scheduledEmails: string;
+  serversConfigured: string;
+
+  constructor() { 
+    this.emailScheduler = 'Email Scheduler'; 
+    this.serversConfigurator  = 'Servers Configurator';
+    this.statusEmailScheduler = "On";
+    this.statusServersConfigurator = "Off";
+    this.scheduledEmails = "Scheduled emails: 10";
+    this.serversConfigured = "Servers Configured: 5"
+}
 
   ngOnInit() {
   }

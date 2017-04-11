@@ -10,13 +10,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './commons/header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { WidgetComponent } from './dashboard//widget/widget.component';
+
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AdministrationComponent,
-    DashboardComponent
+    DashboardComponent,
+    WidgetComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +30,7 @@ import { AdministrationComponent } from './administration/administration.compone
     JsonpModule,
     NgbModule.forRoot(),
     MaterialModule,
+    routing,
     RouterModule.forRoot([
       {
         path: 'dashboard',
@@ -34,7 +39,7 @@ import { AdministrationComponent } from './administration/administration.compone
       {
         path: 'administration',
         component: AdministrationComponent
-      }
+      },
     ])
   ],
   providers: [],

@@ -1,0 +1,25 @@
+@import '../../../styles/base/_variables.scss';
+/*Widget*/
+.ita-widget{
+  padding: 0.9375rem;
+  border: 0.125rem solid $borderColor;
+  height: 18.75rem;
+  min-width: 18.75rem;
+  p{
+    margin: 0 0 0.625rem 0;
+    font-size:1.125rem;
+  }
+  p:first-child{
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;   
+  }
+  i{
+    float: right;
+  }
+  i:hover{
+    color: $widgetHover;
+  }
+}
+
+
