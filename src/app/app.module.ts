@@ -11,7 +11,7 @@ import { HeaderComponent } from './commons/header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { WidgetComponent } from './dashboard//widget/widget.component';
-
+import { FooterComponent } from './commons/footer/footer.component';
 import { routing } from './app.routing';
 
 @NgModule({
@@ -20,7 +20,8 @@ import { routing } from './app.routing';
     HeaderComponent,
     AdministrationComponent,
     DashboardComponent,
-    WidgetComponent
+    WidgetComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
