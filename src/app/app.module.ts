@@ -17,6 +17,7 @@ import { FooterComponent } from './commons/footer/footer.component';
 import { ItaUserSettingsComponent } from './commons/ita-user-settings/ita-user-settings.component';
 import { ItaUserTimeSettingsComponent } from './commons/ita-user-time-settings/ita-user-time-settings.component';
 import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-language.component';
+import { SettingsComponent,ServersConfigurator,EmailScheduler } from './dashboard/widget/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,10 @@ import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-l
     FooterComponent,
     ItaUserSettingsComponent,
     ItaUserTimeSettingsComponent,
-    ItaUserLanguageComponent
+    ItaUserLanguageComponent,
+    SettingsComponent,
+    ServersConfigurator,
+    EmailScheduler,
   ],
   imports: [
     BrowserModule,
@@ -40,10 +44,9 @@ import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-l
     NgbModule.forRoot(),
     MaterialModule.forRoot(),
     BrowserAnimationsModule
-
   ],
-  providers: [
-  ],
+  providers: [],
+  entryComponents:[EmailScheduler,ServersConfigurator],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
