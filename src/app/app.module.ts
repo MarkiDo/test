@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule, JsonpModule } from '@angular/http';
+import { HttpModule, JsonpModule, Http } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +18,12 @@ import { ItaUserSettingsComponent } from './commons/ita-user-settings/ita-user-s
 import { ItaUserTimeSettingsComponent } from './commons/ita-user-time-settings/ita-user-time-settings.component';
 import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-language.component';
 import { SettingsComponent,ServersConfigurator,EmailScheduler } from './dashboard/widget/settings/settings.component';
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+
+export function HttpLoaderFactory(http: Http) {
+    return new TranslateHttpLoader(http, './src/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -43,7 +49,14 @@ import { SettingsComponent,ServersConfigurator,EmailScheduler } from './dashboar
     JsonpModule,
     NgbModule.forRoot(),
     MaterialModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [Http]
+          }
+        })
   ],
   providers: [],
   entryComponents:[EmailScheduler,ServersConfigurator],

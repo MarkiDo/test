@@ -1,0 +1,16 @@
+{
+  "HOME": {
+    "CFG": "Service Configuration",
+    "ADM": "Adminisration",
+    "ESC": "Email Scheduler",
+    "STA": "Status: On",
+    "STO": "Status: Off",
+    "SCE": "Scheduled emails: 10",
+    "SCF": "Servers Configurator",
+    "SCG": "Servers Configured: 5",
+    "TSE": "Time Settings",
+    "LNG": "Language",
+    "SOT": "Sign Out"
+    
+  }
+}
