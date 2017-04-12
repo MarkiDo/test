@@ -16,21 +16,3 @@
     margin-right:0px;
     clear:left;
 }
-.mat-dialog-container {
- border: 0.25rem solid $borderColor;
- color: $userSettingsItemHoverText;
- text-shadow: 0.0625rem 0.0625rem 0.0625rem $userSettingsItemHoverShadow;   
- background-color: $userSettingsBoxBorder;   
- box-shadow: inset 0 0 0.625rem $userSettingsItemHoverShadow; 
- }
-.mat-radio-label-content{
-    font-size:0.85rem;
-}
-.mat-radio-outer-circle{
-    border:;
-  
-}
-.mat-radio-inner-circle{
-    background:#FFA500;
-   
-}
