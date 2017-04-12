@@ -1,4 +1,4 @@
-<md-toolbar>
+<md-toolbar class="ita-md-toolbar">
   <button *ngIf="!auth.authenticated()" md-raised-button (click)="auth.login()">Login</button>
   <div *ngIf="auth.authenticated()">
   <button md-button [md-menu-trigger-for]="menu">

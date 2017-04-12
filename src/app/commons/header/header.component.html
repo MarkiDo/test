@@ -1,5 +1,6 @@
 <nav class="navbar navbar-toggleable-md navbar-light ita-header">
   <div class="container">
+    <app-ita-user-settings ngclass="ita-user-settings"></app-ita-user-settings>
     <button class="hamburger hamburger--collapse" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" [ngClass]=" buttonState === true ? 'is-active': 'collapsed'"
       (click)="clickButton()">
       <span class="hamburger-box">
@@ -17,6 +18,5 @@
         </a>
       </div>
     </div>
-    <app-ita-user-settings></app-ita-user-settings>
   </div>
 </nav>
