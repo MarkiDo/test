@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {AuthService} from '../services/auth.service';
 @Component({
   selector: 'ita-dashboard',
   templateUrl: './dashboard.component.html',
@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   scheduledEmails: string;
   serversConfigured: string;
 
-  constructor() { 
+  constructor(private auth:AuthService) { 
     this.emailScheduler = 'Email Scheduler'; 
     this.serversConfigurator  = 'Servers Configurator';
     this.statusEmailScheduler = "On";

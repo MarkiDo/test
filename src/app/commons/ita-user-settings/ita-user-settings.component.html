@@ -1,10 +1,13 @@
 <md-toolbar>
+  <button *ngIf="!auth.authenticated()" md-raised-button (click)="auth.login()">Login</button>
+  <div *ngIf="auth.authenticated()">
   <button md-button [md-menu-trigger-for]="menu">
-  userbox@email.ua <i class="align-middle fa fa-user-circle fa-2x"></i>
+  {{auth.profile.email}} <i class="align-middle fa fa-user-circle fa-2x"></i>
   </button>
-  <md-menu #menu="mdMenu">
+  <md-menu #menu="mdMenu" x-position="before" y-position="below" [overlapTrigger]="false">
     <button md-menu-item [routerLink]="['/UserTimeSettings']">Time Settings</button>
     <button md-menu-item [routerLink]="['/UserLanguage']">Language</button>
-    <button md-menu-item href="#">Sign Out</button>
+    <button md-menu-item href="#" (click)="auth.logout()">Sign Out</button>
   </md-menu>
+  </div>
 </md-toolbar>
