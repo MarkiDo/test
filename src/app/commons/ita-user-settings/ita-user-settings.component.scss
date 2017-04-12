@@ -14,8 +14,9 @@
 :host {
   position: absolute;
   right: 0;
+  top: -0.5rem;
   @include respond-to($sm-max) {
     right: 2.5rem;
-    top: -0.5625rem;
+    top: -0.625rem;
   }
 }
