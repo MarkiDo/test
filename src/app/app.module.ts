@@ -2,9 +2,12 @@ import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
-import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { routing } from './app.routing';
+import 'hammerjs';
+//import { LocationStrategy, HashLocationStrategy, APP_BASE_HREF } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './commons/header/header.component';
@@ -12,7 +15,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { WidgetComponent } from './dashboard//widget/widget.component';
 import { FooterComponent } from './commons/footer/footer.component';
-import { routing } from './app.routing';
+import { ItaUserSettingsComponent } from './commons/ita-user-settings/ita-user-settings.component';
+import { ItaUserTimeSettingsComponent } from './commons/ita-user-time-settings/ita-user-time-settings.component';
+import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-language.component';
 
 @NgModule({
   declarations: [
@@ -21,29 +26,27 @@ import { routing } from './app.routing';
     AdministrationComponent,
     DashboardComponent,
     WidgetComponent,
-    FooterComponent
+    FooterComponent,
+    ItaUserSettingsComponent,
+    ItaUserTimeSettingsComponent,
+    ItaUserLanguageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    routing,
     ReactiveFormsModule,
     JsonpModule,
     NgbModule.forRoot(),
-    MaterialModule,
-    routing,
-    RouterModule.forRoot([
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: 'administration',
-        component: AdministrationComponent
-      },
-    ])
+    MaterialModule.forRoot(),
+    BrowserAnimationsModule
+
   ],
-  providers: [],
+  providers: [
+   // { provide: LocationStrategy, useClass: HashLocationStrategy },
+   // { provide: APP_BASE_HREF, useValue: '/' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
