@@ -7,7 +7,6 @@ import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from './app.routing';
 import 'hammerjs';
-//import { LocationStrategy, HashLocationStrategy, APP_BASE_HREF } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './commons/header/header.component';
@@ -44,8 +43,6 @@ import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-l
 
   ],
   providers: [
-   // { provide: LocationStrategy, useClass: HashLocationStrategy },
-   // { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]
 })
