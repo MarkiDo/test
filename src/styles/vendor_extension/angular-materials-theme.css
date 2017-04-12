@@ -1,5 +1,5 @@
 /*Dialog styles*/
-.cdk-visually-hidden {
+/*.cdk-visually-hidden {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -55,19 +55,19 @@
 }
 .cdk-overlay-transparent-backdrop {
     background: 0 0;
-}
+}*/
 /*Radio button styles*/
-.mat-radio-label-content{
+/*.mat-radio-label-content{
     font-size:0.85rem;
-}
-.mat-radio-outer-circle{
+}*/
+/*.mat-radio-outer-circle{
     border:#FFA500;
   
 }
 .mat-radio-inner-circle{
-    background:#FFA500;
+    background:#FFA500;*/
    
-}
+/*}*/
 /*Inputs styles*/
 .mat-input-placeholder.mat-empty.mat-float{
 border:#ffe3ac;
