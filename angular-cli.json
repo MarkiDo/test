@@ -24,13 +24,15 @@
       "../node_modules/bootstrap/dist/css/bootstrap.min.css",
       "../node_modules/hamburgers/dist/hamburgers.min.css",
       "../node_modules/font-awesome/css/font-awesome.css",
+      "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
       "styles/vendor_extension/bootstrap.scss",
       "styles.css"
       ],
       "scripts": [
       "../node_modules/jquery/dist/jquery.js",
       "../node_modules/tether/dist/js/tether.js",
-      "../node_modules/bootstrap/dist/js/bootstrap.js"
+      "../node_modules/bootstrap/dist/js/bootstrap.js",
+      "../node_modules/hammerjs/hammer.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
