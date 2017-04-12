@@ -18,6 +18,9 @@ import { ItaUserSettingsComponent } from './commons/ita-user-settings/ita-user-s
 import { ItaUserTimeSettingsComponent } from './commons/ita-user-time-settings/ita-user-time-settings.component';
 import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-language.component';
 import { SettingsComponent,ServersConfigurator,EmailScheduler } from './dashboard/widget/settings/settings.component';
+import { AuthService } from './services/auth.service';
+import { FirebaseService, firebaseConfig } from './services/firebase.service';
+import { AngularFireModule } from 'angularfire2';
 
 @NgModule({
   declarations: [
@@ -43,9 +46,10 @@ import { SettingsComponent,ServersConfigurator,EmailScheduler } from './dashboar
     JsonpModule,
     NgbModule.forRoot(),
     MaterialModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [AuthService, FirebaseService],
   entryComponents:[EmailScheduler,ServersConfigurator],
   bootstrap: [AppComponent]
 })
