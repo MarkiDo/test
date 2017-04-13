@@ -19,6 +19,8 @@ export class SettingsComponent implements OnInit {
   selector: 'emailScheduler',
   templateUrl: './email-sheduler.html',
   styleUrls: ['./settings.component.scss']
+
+  
 })
 export class EmailScheduler{ 
   data : Object;

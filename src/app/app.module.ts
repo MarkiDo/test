@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule, JsonpModule } from '@angular/http';
+import { HttpModule, JsonpModule, Http } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +21,12 @@ import { SettingsComponent,ServersConfigurator,EmailScheduler } from './dashboar
 import { AuthService } from './services/auth.service';
 import { FirebaseService, firebaseConfig } from './services/firebase.service';
 import { AngularFireModule } from 'angularfire2';
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+
+export function HttpLoaderFactory(http: Http) {
+    return new TranslateHttpLoader(http, './src/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -48,6 +54,13 @@ import { AngularFireModule } from 'angularfire2';
     MaterialModule.forRoot(),
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig)
+    TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [Http]
+          }
+        })
   ],
   providers: [AuthService, FirebaseService],
   entryComponents:[EmailScheduler,ServersConfigurator],
