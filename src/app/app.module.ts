@@ -53,7 +53,7 @@ export function HttpLoaderFactory(http: Http) {
     NgbModule.forRoot(),
     MaterialModule.forRoot(),
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
     TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
