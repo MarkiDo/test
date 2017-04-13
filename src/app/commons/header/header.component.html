@@ -10,13 +10,16 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a routerLink="/dashboard" class="nav-item nav-link" routerLinkActive="active-link">
-          <span>Service Configuration</span>
+          <span>{{ 'HOME.CFG' | translate }}</span>
         </a>
         <a routerLink="/administration" class="nav-item nav-link" routerLinkActive="active-link">
-          <span>Administration</span>
+          <span>{{ 'HOME.ADM' | translate }}</span>
         </a>
       </div>
     </div>
     <app-ita-user-settings></app-ita-user-settings>
   </div>
+  <select #langSelect (change)="translate.use(langSelect.value)">
+      <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+    </select>
 </nav>
