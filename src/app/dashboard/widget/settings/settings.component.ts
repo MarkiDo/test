@@ -1,6 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {MdDialog} from '@angular/material';
-import {AuthService} from 'app/services/auth.service';
 import {FirebaseService} from 'app/services/firebase.service';
 
 @Component({
@@ -25,10 +24,8 @@ export class SettingsComponent implements OnInit {
 export class EmailScheduler{ 
   data : Object;
   newSettings : Object;
-  constructor(private auth: AuthService, private firebaseService : FirebaseService){ 
-    if(auth.authenticated()){ 
+  constructor(private firebaseService : FirebaseService){ 
       firebaseService.getSettings().subscribe(data=>{this.data = data.settings; });
-    }
   }
   save(name: string, description :string){
     this.newSettings = {"name":name, "description":description};

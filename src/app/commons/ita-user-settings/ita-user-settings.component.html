@@ -1,6 +1,5 @@
 <md-toolbar class="ita-md-toolbar">
-  <button *ngIf="!auth.authenticated()" md-raised-button (click)="auth.login()">Login</button>
-  <div *ngIf="auth.authenticated()">
+  <div *ngIf="auth.authenticated() && auth.profile">
   <button md-button [md-menu-trigger-for]="menu">
   {{auth.profile.email}} <i class="align-middle fa fa-user-circle fa-2x"></i>
   </button>

@@ -8,10 +8,9 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./ita-user-settings.component.scss']
 })
 export class ItaUserSettingsComponent implements OnInit {
-constructor(private translate: TranslateService,public auth: AuthService) {
+constructor(private translate: TranslateService, public auth: AuthService) {
         translate.addLangs(["en", "ua"]);
         translate.setDefaultLang('en');
-
         let browserLang = translate.getBrowserLang();
         translate.use(browserLang.match(/en|ua/) ? browserLang : 'en');
     }
