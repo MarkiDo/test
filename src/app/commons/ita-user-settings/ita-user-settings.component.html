@@ -7,7 +7,7 @@
   <md-menu #menu="mdMenu" x-position="before" y-position="below" [overlapTrigger]="false">
     <button md-menu-item [routerLink]="['/UserTimeSettings']">{{ 'HOME.TSE' | translate }}</button>
     <button md-menu-item [routerLink]="['/UserLanguage']">{{ 'HOME.LNG' | translate }}</button>
-    <button md-menu-item href="#">{{ 'HOME.SOT' | translate }}</button>
+    <button md-menu-item href="#" (click)="auth.logout()">{{ 'HOME.SOT' | translate }}</button>
   </md-menu>
   </div>
 </md-toolbar>

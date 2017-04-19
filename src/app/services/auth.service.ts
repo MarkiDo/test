@@ -12,7 +12,7 @@ export class AuthService {
       localStorage.setItem('id_token', authResult.idToken);
       this.lock.getProfile(authResult.idToken, (error, profile) => {
         if (error) {
-          alert(error);
+          console.log("Error during getting user profile: "+ error);
         }
         else{
         localStorage.setItem('profile', JSON.stringify(profile));

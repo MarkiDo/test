@@ -30,7 +30,7 @@ export class FirebaseService {
       console.log('Settings saved successfully');
     })
     .catch((error)=>{
-      alert('Error during settings saving: ' + error);
+      console.log('Error during settings saving: ' + error);
     });
    }
 }
