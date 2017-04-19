@@ -16,7 +16,7 @@ export class AuthService {
         }
         else{
         localStorage.setItem('profile', JSON.stringify(profile));
-        this.profile = JSON.parse(localStorage.getItem('profile'));
+        this.profile = JSON.stringify(profile);
         }
       });
     });
