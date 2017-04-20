@@ -5,7 +5,7 @@
       <label for="name">Scheduler Name:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Name" value="" name="name">
+      <input mdInput placeholder="Some Name" name="name" #name value={{data?.name}}>
     </md-input-container>
   </div>
   <div class="settings-form__columns">
@@ -13,7 +13,7 @@
       <label for="description">Description:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Description" value="" name="description">
+      <input mdInput placeholder="Some Description"  name="description" #description value="{{data?.description}}">
     </md-input-container>
   </div>
   <div class="settings-form__radio-group">
@@ -24,6 +24,6 @@
     </md-radio-group>
   </div>
   <div class="settings-form__button" md-dialog-actions>
-    <button md-dialog-close>Save</button>
+    <button md-dialog-close (click)="save(name.value, description.value)">Save</button>
   </div>
 </form>

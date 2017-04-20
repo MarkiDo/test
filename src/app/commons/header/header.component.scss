@@ -4,6 +4,7 @@
 .ita-header {
   border-bottom: 0.125rem solid $borderColor;
   .container {
+    position: relative;
     @include respond-to($xs-575-max) {
       margin-left: 0;
       margin-right: 0;
