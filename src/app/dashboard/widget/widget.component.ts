@@ -7,8 +7,8 @@ import { DashboardComponent } from 'app/dashboard/dashboard.component';
 })
 export class WidgetComponent {
 
-  @Input() title: string;
-  @Input() status: string;
-  @Input() data: string;
+  @Input() public title: string;
+  @Input() public status: string;
+  @Input() public data: string;
 
 }
