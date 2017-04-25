@@ -1,0 +1,26 @@
+<form class="settings-form" #email_shedulerForm="ngForm" (ngSubmit)="onSubmit(email_shedulerForm.value)">
+  <div class="settings-form__close-button" md-dialog-actions>
+    <button md-dialog-close class="close" aria-label="Close"> <span aria-hidden="true">&times;</span>
+</button>
+  </div>
+  <div class="settings-form__title">{{'Settings.Email_Scheduler'|translate}}</div>
+  <div class="settings-form__columns">
+    <div class="settings-form__labelbox">
+      <label for="name">{{'Settings.Scheduler_Name'|translate}}:</label>
+    </div>
+    <md-input-container>
+      <input mdInput placeholder="Some Name" name="name" value="" ngModel>
+    </md-input-container>
+  </div>
+  <div class="settings-form__columns">
+    <div class="settings-form__labelbox">
+      <label for="description">{{'Settings.Description'|translate}}:</label>
+    </div>
+    <md-input-container>
+      <input mdInput placeholder="Some Description" name="description" value="" ngModel>
+    </md-input-container>
+  </div>
+  <div class="settings-form__button">
+    <button class="btn" type="submit">{{'Settings.Save'|translate}}</button>
+  </div>
+</form>

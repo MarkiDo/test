@@ -24,6 +24,8 @@ import { FirebaseService, firebaseConfig } from './services/firebase.service';
 import { AngularFireModule } from 'angularfire2';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { EmailSchedulerDialogComponent } from './dashboard/email-scheduler-dialog/email-scheduler-dialog.component';
+import { ServersConfiguratorDialogComponent } from './dashboard/servers-configurator-dialog/servers-configurator-dialog.component';
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http, './src/i18n/', '.json');
@@ -40,6 +42,8 @@ export function HttpLoaderFactory(http: Http) {
     ItaUserSettingsComponent,
     ItaUserTimeSettingsComponent,
     ItaUserLanguageComponent,
+    EmailSchedulerDialogComponent,
+    ServersConfiguratorDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,7 @@ export function HttpLoaderFactory(http: Http) {
         })
   ],
   providers: [ AuthService, FirebaseService],
-  entryComponents: [ ],
+  entryComponents: [EmailSchedulerDialogComponent, ServersConfiguratorDialogComponent],
   bootstrap: [ AppComponent]
 })
 export class AppModule { }
