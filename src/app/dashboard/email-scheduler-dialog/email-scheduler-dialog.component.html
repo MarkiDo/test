@@ -9,7 +9,7 @@
       <label for="name">{{'Settings.Scheduler_Name'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Name" name="name" value="" ngModel>
+      <input mdInput placeholder="Some Name" name="name" value="{{data?.form.name}}" ngModel>
     </md-input-container>
   </div>
   <div class="settings-form__columns">
@@ -17,7 +17,7 @@
       <label for="description">{{'Settings.Description'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Description" name="description" value="" ngModel>
+      <input mdInput placeholder="Some Description" name="description" value="{{data?.form.description}}" ngModel>
     </md-input-container>
   </div>
   <div class="settings-form__button">
