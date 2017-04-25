@@ -70,7 +70,9 @@ module.exports = {
         "test": /\.ts$/,
         "enforce": 'pre',
         "loader": 'tslint-loader',
-        "options": { /* Loader options go here */ }
+        "options": { 
+          "failOnHint": true,
+        }
       },
       {
         "enforce": "pre",
