@@ -12,5 +12,16 @@
     "LNG": "Language",
     "SOT": "Sign Out"
     
+  },
+  "Settings":{
+    "Email_Scheduler":"Email Scheduler",
+    "Servers_Configurator":"Servers Configurator",
+    "Scheduler_Name":"Scheduler Name",
+    "Description":"Description",
+    "Options":"Options",
+    "Save_and_email":"Save and Email to Recipients",
+    "Only_email":"Only Email to Recipients",
+    "Save":"Save"
   }
+
 }

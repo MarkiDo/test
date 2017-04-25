@@ -12,5 +12,16 @@
     "LNG": "Мова",
     "SOT": "Вийти"
 
+  },
+    "Settings":{
+    "Email_Scheduler":"Поштовий планувальник",
+    "Servers_Configurator":"Налаштування серверів",
+    "Scheduler_Name":"Назва",
+    "Description":"Опис",
+    "Options":"Опції",
+    "Save_and_email":"Зберегти та надіслати одержувачам",
+    "Only_email":"Лише надіслати одержувачам",
+    "Save":"Зберегти"
   }
+
 }
