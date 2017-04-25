@@ -17,7 +17,10 @@ import { FooterComponent } from './commons/footer/footer.component';
 import { ItaUserSettingsComponent } from './commons/ita-user-settings/ita-user-settings.component';
 import { ItaUserTimeSettingsComponent } from './commons/ita-user-time-settings/ita-user-time-settings.component';
 import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-language.component';
-import { SettingsComponent,ServersConfigurator,EmailScheduler } from './dashboard/widget/settings/settings.component';
+import {
+  SettingsComponent,
+  ServersConfigurator,
+  EmailScheduler } from './dashboard/widget/settings/settings.component';
 import { AuthService } from './services/auth.service';
 import { FirebaseService, firebaseConfig } from './services/firebase.service';
 import { AngularFireModule } from 'angularfire2';
