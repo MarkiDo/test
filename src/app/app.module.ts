@@ -24,8 +24,12 @@ import { FirebaseService, firebaseConfig } from './services/firebase.service';
 import { AngularFireModule } from 'angularfire2';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { EmailSchedulerDialogComponent } from './dashboard/email-scheduler-dialog/email-scheduler-dialog.component';
-import { ServersConfiguratorDialogComponent } from './dashboard/servers-configurator-dialog/servers-configurator-dialog.component';
+import {
+  EmailSchedulerDialogComponent
+} from './dashboard/email-scheduler-dialog/email-scheduler-dialog.component';
+import {
+  ServersConfiguratorDialogComponent
+} from './dashboard/servers-configurator-dialog/servers-configurator-dialog.component';
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http, './src/i18n/', '.json');

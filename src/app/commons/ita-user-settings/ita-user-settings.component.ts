@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './ita-user-settings.component.html',
   styleUrls: ['./ita-user-settings.component.scss']
 })
-export class ItaUserSettingsComponent implements OnInit {
+export class ItaUserSettingsComponent {
 constructor(private translate: TranslateService, public auth: AuthService) {
         translate.addLangs(['en', 'ua']);
         translate.setDefaultLang('en');
