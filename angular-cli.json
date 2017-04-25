@@ -1,38 +1,40 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "ita-cloud-lv-232"
-    },
-    "apps": [
+    "name": "ita-cloud-lv-232",
+    "ejected": true
+  },
+  "apps": [
     {
       "root": "src",
       "outDir": "dist",
       "assets": [
-      "assets",
-      "favicon.ico"
+        "assets",
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
+      "testTsconfig": "tsconfig.json",
       "prefix": "ita",
       "styles": [
-      "styles/base/_variables.scss",
-      "styles/helpers/_mixins.scss",
-      "../node_modules/tether/dist/css/tether.min.css",
-      "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-      "../node_modules/hamburgers/dist/hamburgers.min.css",
-      "../node_modules/font-awesome/css/font-awesome.css",
-      "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-      "styles/vendor_extension/bootstrap.scss",
-      "styles.css"
+        "styles/base/_variables.scss",
+        "styles/helpers/_mixins.scss",
+        "../node_modules/tether/dist/css/tether.min.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/hamburgers/dist/hamburgers.min.css",
+        "../node_modules/font-awesome/css/font-awesome.css",
+        "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+        "styles/vendor_extension/bootstrap.scss",
+        "styles.css"
       ],
       "scripts": [
-      "../node_modules/jquery/dist/jquery.js",
-      "../node_modules/tether/dist/js/tether.js",
-      "../node_modules/bootstrap/dist/js/bootstrap.js",
-      "../node_modules/hammerjs/hammer.min.js"
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/tether/dist/js/tether.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "../node_modules/hammerjs/hammer.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -40,111 +42,36 @@
         "prod": "environments/environment.prod.ts"
       }
     }
-    ],
-    "addons": [
-    {
-      "0": ".",
-      "1": ".",
-      "2": "/",
-      "3": "n",
-      "4": "o",
-      "5": "d",
-      "6": "e",
-      "7": "_",
-      "8": "m",
-      "9": "o",
-      "10": "d",
-      "11": "u",
-      "12": "l",
-      "13": "e",
-      "14": "s",
-      "15": "/",
-      "16": "f",
-      "17": "o",
-      "18": "n",
-      "19": "t",
-      "20": "-",
-      "21": "a",
-      "22": "w",
-      "23": "e",
-      "24": "s",
-      "25": "o",
-      "26": "m",
-      "27": "e",
-      "28": "/",
-      "29": "f",
-      "30": "o",
-      "31": "n",
-      "32": "t",
-      "33": "s",
-      "34": "/",
-      "35": "*",
-      "36": ".",
-      "37": "+",
-      "38": "(",
-        "39": "o",
-        "40": "t",
-        "41": "f",
-        "42": "|",
-        "43": "e",
-        "44": "o",
-        "45": "t",
-        "46": "|",
-        "47": "s",
-        "48": "v",
-        "49": "g",
-        "50": "|",
-        "51": "t",
-        "52": "t",
-        "53": "f",
-        "54": "|",
-        "55": "w",
-        "56": "o",
-        "57": "f",
-        "58": "f",
-        "59": "|",
-        "60": "w",
-        "61": "o",
-        "62": "f",
-        "63": "f",
-        "64": "2",
-        "65": ")"
-}
-],
-"e2e": {
-  "protractor": {
-    "config": "./protractor.conf.js"
-  }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
   },
   "lint": [
-  {
-    "files": "src/**/*.ts",
-    "project": "src/tsconfig.json"
+    {
+      "files": "src/**/*.ts",
+      "project": "src/tsconfig.json"
     },
     {
       "files": "e2e/**/*.ts",
       "project": "e2e/tsconfig.json"
     }
-    ],
-    "test": {
-      "karma": {
-        "config": "./karma.conf.js"
-      }
-      },
-      "defaults": {
-        "styleExt": "scss",
-        "prefixInterfaces": false,
-        "inline": {
-          "style": false,
-          "template": false
-          },
-          "spec": {
-            "class": false,
-            "component": true,
-            "directive": true,
-            "module": false,
-            "pipe": true,
-            "service": true
-          }
-        }
-      }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "scss",
+    "class": {
+      "spec": false
+    },
+    "component": {
+      "spec": true,
+      "inlineStyle": false,
+      "inlineTemplate": false
+    }
+  }
+}
