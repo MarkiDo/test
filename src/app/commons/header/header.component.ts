@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ita-header',
@@ -7,20 +7,18 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  buttonState: boolean;
+  public buttonState: boolean;
+  constructor( private translate: TranslateService) {
+    translate.addLangs(['en', 'ua']);
+    translate.setDefaultLang('en');
 
-  ngOnInit() {
+    let browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|ua/) ? browserLang : 'en');
+  }
+  public ngOnInit() {
     this.buttonState = false;
   }
-  clickButton(buttonState: boolean): boolean {
+  public clickButton(buttonState: boolean): boolean {
     return this.buttonState = !this.buttonState;
   }
-
-  constructor(private translate: TranslateService) {
-        translate.addLangs(["en", "ua"]);
-        translate.setDefaultLang('en');
-
-        let browserLang = translate.getBrowserLang();
-        translate.use(browserLang.match(/en|ua/) ? browserLang : 'en');
-    }
 }
