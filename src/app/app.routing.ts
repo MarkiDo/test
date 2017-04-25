@@ -1,9 +1,11 @@
-import {ModuleWithProviders} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdministrationComponent } from './administration/administration.component';
-import { ItaUserTimeSettingsComponent } from './commons/ita-user-time-settings/ita-user-time-settings.component';
+import {
+  ItaUserTimeSettingsComponent
+} from './commons/ita-user-time-settings/ita-user-time-settings.component';
 import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-language.component';
 
 const appRoutes: Routes = [
@@ -16,11 +18,11 @@ const appRoutes: Routes = [
     component: AdministrationComponent
   },
   {
-    path:'UserTimeSettings',
+    path: 'UserTimeSettings',
     component: ItaUserTimeSettingsComponent
   },
   {
-    path:'UserLanguage',
+    path: 'UserLanguage',
     component: ItaUserLanguageComponent
   }
 ];
