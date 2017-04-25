@@ -19,11 +19,6 @@ import {
   ItaUserTimeSettingsComponent
 } from './commons/ita-user-time-settings/ita-user-time-settings.component';
 import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-language.component';
-import {
-  SettingsComponent,
-  ServersConfigurator,
-  EmailScheduler
-} from './dashboard/widget/settings/settings.component';
 import { AuthService } from './services/auth.service';
 import { FirebaseService, firebaseConfig } from './services/firebase.service';
 import { AngularFireModule } from 'angularfire2';
@@ -45,9 +40,6 @@ export function HttpLoaderFactory(http: Http) {
     ItaUserSettingsComponent,
     ItaUserTimeSettingsComponent,
     ItaUserLanguageComponent,
-    SettingsComponent,
-    ServersConfigurator,
-    EmailScheduler,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +61,7 @@ export function HttpLoaderFactory(http: Http) {
         })
   ],
   providers: [ AuthService, FirebaseService],
-  entryComponents: [ EmailScheduler, ServersConfigurator],
+  entryComponents: [ ],
   bootstrap: [ AppComponent]
 })
 export class AppModule { }

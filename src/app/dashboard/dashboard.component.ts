@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
 
   constructor(private translate: TranslateService, private auth:AuthService) { 
     translate.addLangs(["en", "ua"]);
@@ -15,8 +15,4 @@ export class DashboardComponent implements OnInit {
     let browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|ua/) ? browserLang : 'en');
   }
-
-  ngOnInit() {
-  }
-
 }
