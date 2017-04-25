@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -9,11 +9,10 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ItaUserSettingsComponent implements OnInit {
 constructor(private translate: TranslateService, public auth: AuthService) {
-        translate.addLangs(["en", "ua"]);
+        translate.addLangs(['en', 'ua']);
         translate.setDefaultLang('en');
         let browserLang = translate.getBrowserLang();
         translate.use(browserLang.match(/en|ua/) ? browserLang : 'en');
     }
-  ngOnInit() {}
 
 }
