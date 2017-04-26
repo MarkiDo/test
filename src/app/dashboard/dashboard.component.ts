@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
 import { MdDialog } from '@angular/material';
@@ -14,22 +14,29 @@ import {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  public height400: string;
+  public width600: string;
 
-constructor(private translate: TranslateService,
-            private auth: AuthService,
-            public dialog: MdDialog) {
+  constructor(
+    private translate: TranslateService,
+    private auth: AuthService,
+    public dialog: MdDialog) {
   }
- private openServersConfiguratorDialog() {
-  this.dialog.open(ServersConfiguratorDialogComponent, {
-    height: '400px',
-    width: '600px'
+  public ngOnInit() {
+      this.height400 = '400px';
+      this.width600 = '600px';
+  }
+  private openServersConfiguratorDialog( height400, width600) {
+    this.dialog.open(ServersConfiguratorDialogComponent, {
+      height: this.height400,
+      width: this.width600
+      });
+  }
+  private openEmailSchedulerDialog( height400, width600) {
+    this.dialog.open(EmailSchedulerDialogComponent, {
+      height: this.height400,
+      width: this.width600
     });
   }
- private openEmailSchedulerDialog() {
-  this.dialog.open(EmailSchedulerDialogComponent, {
-    height: '400px',
-    width: '600px'
-    });
-    }
 }

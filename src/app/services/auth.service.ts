@@ -16,9 +16,7 @@ export class AuthService {
     this.lock.on('authenticated', (authResult) => {
       localStorage.setItem('id_token', authResult.idToken);
       this.lock.getProfile(authResult.idToken, (error, profile) => {
-        if (error) {
-          console.log('Error during getting user profile: ' + error);
-        } else {
+        if (!error) {
           localStorage.setItem('profile', JSON.stringify(profile));
           this.profile = profile;
         }

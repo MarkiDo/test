@@ -319,9 +319,7 @@ module.exports = {
         }
     }
     }),
-    new BaseHrefWebpackPlugin({
-      baseHref: 'https://mplesha.gitlab.io/ita-cloud-lv-232/'
-    }),
+    new BaseHrefWebpackPlugin({}),
     new CommonsChunkPlugin({
       "name": "inline",
       "minChunks": null

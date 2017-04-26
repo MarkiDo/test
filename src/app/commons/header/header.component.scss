@@ -9,6 +9,12 @@
       margin-left: 0;
       margin-right: 0;
     }
+    .navbar-toggler-right {
+      right: 0;
+    }
+    .navbar-toggler-right.navbar-toggler {
+        padding: .05rem .25rem 0.1rem;
+      }
   }
   .navbar-brand {
     font-size: 1.25rem;
@@ -22,23 +28,6 @@
       span {
         border-bottom: 0.25rem solid $activeLink;
       }
-    }
-  }
-  .hamburger {
-    display: none;
-    @include respond-to($sm-max) {
-      display: inline-block;
-      float: right;
-      padding: 0.3125rem;
-    }
-  }
-  .hamburger-inner,
-  .hamburger-inner:after,
-  .hamburger-inner:before {
-    width:  2rem;
-    height: 0.1875rem;
-  }
-  .hamburger-box {
-    width: 2rem;
+    }    
   }
 }
