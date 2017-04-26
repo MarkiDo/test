@@ -60,12 +60,15 @@ module.exports = {
     ]
   },
   "output": {
-    "path": path.join(process.cwd(), "dist"),
+    "path": path.join(process.cwd(), "public"),
     "filename": "[name].bundle.js",
     "chunkFilename": "[id].chunk.js"
   },
   "module": {
     "rules": [
+      { 
+        "test": /.src\/assets\/i18n\/.*\.json$/,
+        "loader": "file-loader?name=src/assets/i18n/[name].[ext]" },
       {
         "test": /\.ts$/,
         "enforce": 'pre',
@@ -316,7 +319,9 @@ module.exports = {
         }
     }
     }),
-    new BaseHrefWebpackPlugin({}),
+    new BaseHrefWebpackPlugin({
+      baseHref: 'https://mplesha.gitlab.io/ita-cloud-lv-232/'
+    }),
     new CommonsChunkPlugin({
       "name": "inline",
       "minChunks": null

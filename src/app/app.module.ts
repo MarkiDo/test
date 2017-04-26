@@ -30,9 +30,10 @@ import {
 import {
   ServersConfiguratorDialogComponent
 } from './dashboard/servers-configurator-dialog/servers-configurator-dialog.component';
+import { TranslateService } from '@ngx-translate/core';
 
 export function HttpLoaderFactory(http: Http) {
-    return new TranslateHttpLoader(http, './src/i18n/', '.json');
+    return new TranslateHttpLoader(http, './src/assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -68,8 +69,14 @@ export function HttpLoaderFactory(http: Http) {
           }
         })
   ],
-  providers: [ AuthService, FirebaseService],
-  entryComponents: [EmailSchedulerDialogComponent, ServersConfiguratorDialogComponent],
+  providers: [
+    AuthService,
+    FirebaseService,
+    TranslateService],
+  entryComponents: [
+    EmailSchedulerDialogComponent,
+    ServersConfiguratorDialogComponent
+  ],
   bootstrap: [ AppComponent]
 })
 export class AppModule { }

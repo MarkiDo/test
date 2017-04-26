@@ -7,18 +7,18 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public buttonState: boolean;
-  constructor( private translate: TranslateService) {
-    translate.addLangs(['en', 'ua']);
-    translate.setDefaultLang('en');
-
-    let browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|ua/) ? browserLang : 'en');
-  }
+  public buttonState: string;
+  private btnAriaValue: any;
+  constructor( private translate: TranslateService) {}
   public ngOnInit() {
-    this.buttonState = false;
+    this.buttonState = 'true';
+    this.btnAriaValue = document.getElementById('hamburgerBtn');
   }
-  public clickButton(buttonState: boolean): boolean {
-    return this.buttonState = !this.buttonState;
+  public clickButton(): string {
+    if (this.btnAriaValue.getAttribute('aria-expanded') === 'null') {
+      return this.buttonState;
+    } else {
+      return this.buttonState = this.btnAriaValue.getAttribute('aria-expanded');
+    }
   }
 }

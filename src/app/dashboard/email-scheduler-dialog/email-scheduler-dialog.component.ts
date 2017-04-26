@@ -17,10 +17,6 @@ private newSettings: Object;
 constructor(private translate: TranslateService,
             private auth: AuthService,
             private firebaseService: FirebaseService) {
-    translate.addLangs(['en', 'ua']);
-    translate.setDefaultLang('en');
-    let browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|ua/) ? browserLang : 'en');
     if (auth.authenticated()) {
     firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
     }

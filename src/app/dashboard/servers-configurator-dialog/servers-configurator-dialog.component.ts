@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ita-servers-configurator-dialog',
   templateUrl: './servers-configurator-dialog.component.html',
   styleUrls: ['./servers-configurator-dialog.component.scss']
 })
-export class ServersConfiguratorDialogComponent {}
+export class ServersConfiguratorDialogComponent {
+  constructor(private translate: TranslateService) {}
+}
