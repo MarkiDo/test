@@ -6,8 +6,9 @@
   "scripts": {
     "ng": "ng",
     "start": "webpack-dev-server --port=4200",
-    "build": "webpack && mkdirp public/src/assets/i18n/",
-    "build-pub": "ng build --output-path public --base-href https://mplesha.gitlab.io/ita-cloud-lv-232/",
+    "build": "webpack",
+    // "build-pub": "ng build --output-path public --base-href https://mplesha.gitlab.io/ita-cloud-lv-232/",
+    "build-pub": "webpack && mkdir -p public/src/assets/i18n/ && cp -r src/assets/i18n/* public/src/assets/i18n/",
     "test": "karma start ./karma.conf.js",
     "prepree2e": "npm start",
     "pree2e": "webdriver-manager update --standalone false --gecko false --quiet",
