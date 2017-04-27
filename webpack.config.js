@@ -393,6 +393,6 @@ module.exports = {
     "setImmediate": false
   },
   "devServer": {
-    "historyApiFallback": false
+    "historyApiFallback": true
   }
 };
