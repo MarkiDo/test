@@ -1,30 +1,30 @@
-<form class="settings-form" #serversForm="ngForm" (ngSubmit)="onSubmit(serversForm.value)">
+<form class="settings-form" #LDAPForm="ngForm" (ngSubmit)="onSubmit(LDAPForm.value)">
    <div class="settings-form__close-button" md-dialog-actions>
      <button md-dialog-close class="close" aria-label="Close"> <span aria-hidden="true">&times;</span>
      </button>
    </div>
-   <div class="settings-form__title">{{'Settings.Servers_Configurator'|translate}}</div>
+   <div class="settings-form__title">{{'LDAP.TTL'|translate}}</div>
      <div class="settings-form__columns">
        <div class="settings-form__labelbox">
-      <label for="name">{{'Settings.Scheduler_Name'|translate}}:</label>
+      <label for="name">{{'LDAP.NAME'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Name" value="" name="name">
+      <input mdInput placeholder="{{'LDAP.NAME'|translate}}" value="{{data?.form.hostName}}" name="ldap-name" ngModel>
     </md-input-container>
   </div>
   <div class="settings-form__columns">
     <div class="settings-form__labelbox">
-      <label for="description">{{'Settings.Description'|translate}}:</label>
+      <label for="description">{{'LDAP.HOST'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Description" value="" name="description">
+      <input mdInput placeholder="{{'LDAP.HOST'|translate}}" value="{{data?.form.host}}" name="host" ngModel>
     </md-input-container>
   </div>
   <div class="settings-form__radio-group">
     <md-radio-group>
-      <p>{{'Settings.Options'|translate}}:</p>
-      <md-radio-button value="save">{{'Settings.Option_1'|translate}} </md-radio-button>
-      <md-radio-button value="only_email">{{'Settings.Option_2'|translate}} </md-radio-button>
+      <p>{{'LDAP.AUTTL'|translate}}:</p>
+      <md-radio-button value="save">{{'LDAP.ANON'|translate}} </md-radio-button>
+      <md-radio-button value="only_email">{{'LDAP.PSW'|translate}} </md-radio-button>
     </md-radio-group>
   </div>
   <div class="settings-form__button" md-dialog-actions>

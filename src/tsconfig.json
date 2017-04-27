@@ -21,9 +21,5 @@
       "../node_modules/@types",
       "hammerjs"
     ]
-  },
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts"
-  ]
+  }
 }

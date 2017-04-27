@@ -6,8 +6,8 @@ import {
   EmailSchedulerDialogComponent
 } from './email-scheduler-dialog/email-scheduler-dialog.component';
 import {
-  ServersConfiguratorDialogComponent
-} from './servers-configurator-dialog/servers-configurator-dialog.component';
+  LDAPComponent
+} from './ldap/ldap.component';
 
 @Component({
   selector: 'ita-dashboard',
@@ -27,8 +27,8 @@ export class DashboardComponent implements OnInit {
       this.height400 = '400px';
       this.width600 = '600px';
   }
-  private openServersConfiguratorDialog( height400, width600) {
-    this.dialog.open(ServersConfiguratorDialogComponent, {
+  private LDAPDialog( height400, width600) {
+    this.dialog.open(LDAPComponent, {
       height: this.height400,
       width: this.width600
       });

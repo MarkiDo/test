@@ -28,8 +28,8 @@ import {
   EmailSchedulerDialogComponent
 } from './dashboard/email-scheduler-dialog/email-scheduler-dialog.component';
 import {
-  ServersConfiguratorDialogComponent
-} from './dashboard/servers-configurator-dialog/servers-configurator-dialog.component';
+  LDAPComponent
+} from './dashboard/ldap/ldap.component';
 import { TranslateService } from '@ngx-translate/core';
 
 export function HttpLoaderFactory(http: Http) {
@@ -48,7 +48,7 @@ export function HttpLoaderFactory(http: Http) {
     ItaUserTimeSettingsComponent,
     ItaUserLanguageComponent,
     EmailSchedulerDialogComponent,
-    ServersConfiguratorDialogComponent,
+    LDAPComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,8 +75,8 @@ export function HttpLoaderFactory(http: Http) {
     TranslateService],
   entryComponents: [
     EmailSchedulerDialogComponent,
-    ServersConfiguratorDialogComponent
+    LDAPComponent
   ],
   bootstrap: [ AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
