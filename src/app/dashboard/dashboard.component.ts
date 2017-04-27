@@ -9,9 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class DashboardComponent {
-    public email: string;
-    public server: string;
-  constructor(
+    public modal: string;
+    constructor(
     private translate: TranslateService,
     private auth: AuthService) {
     }

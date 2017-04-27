@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./email-scheduler-dialog.component.scss']
 })
 export class EmailSchedulerDialogComponent {
-private name: string = '';
+public name: string = '';
 private description: string = '';
 private data: Object;
 private newSettings: Object;

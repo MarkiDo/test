@@ -15,30 +15,33 @@ import {
   styleUrls: ['./widget.component.scss']
 })
 export class WidgetComponent implements OnInit {
-  @Input() public email: string;
-  @Input() public server: string;
+  @Input() public modal: string;
   @Input() public title: string;
   @Input() public status: string;
   @Input() public data: string;
-  public height400: string;
-  public width600: string;
+  public type: string;
+  public height350: string;
+  public width550: string;
   constructor(public dialog: MdDialog,
-              private translate: TranslateService ) { }
+              private translate: TranslateService,
+              public email: EmailSchedulerDialogComponent,
+              public server: ServersConfiguratorDialogComponent ) { }
   public ngOnInit() {
-      this.height400 = '400px';
-      this.width600 = '600px';
-  }
-  private openDialog( height400, width600) {
-    if (this.email) {
+      this.height350 = '350px';
+      this.width550 = '550px';
+      this.type = 'constructor';
+    }
+  private openDialog() {
+    if (this.modal === this.email[this.type].name) {
       this.dialog.open(EmailSchedulerDialogComponent, {
-        height: this.height400,
-        width: this.width600
+        height: this.height350,
+        width: this.width550
       });
     }
-    if ( this.server ) {
+    if (this.modal === this.server[this.type].name) {
       this.dialog.open(ServersConfiguratorDialogComponent, {
-        height: this.height400,
-        width: this.width600
+        height: this.height350,
+        width: this.width550
       });
     }
   }
