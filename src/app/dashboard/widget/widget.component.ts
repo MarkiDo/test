@@ -20,7 +20,7 @@ export class WidgetComponent implements OnInit {
   @Input() public status: string;
   @Input() public data: string;
   public type: string;
-  private openModal: any;
+  public openModal: any;
   public height350: string;
   public width550: string;
   constructor(public dialog: MdDialog,
@@ -34,14 +34,14 @@ export class WidgetComponent implements OnInit {
     }
   private openDialog() {
     if (this.modal === this.email[this.type].name) {
-      this.openModal=this.email[this.type]}
+      this.openModal = this.email[this.type];
+    }
     if (this.modal === this.server[this.type].name) {
-      this.openModal=this.server[this.type]
+      this.openModal = this.server[this.type];
     }
-      this.dialog.open(this.openModal, {
-        height: this.height350,
-        width: this.width550
-      });
-    }
-  
+    this.dialog.open(this.openModal, {
+      height: this.height350,
+      width: this.width550
+    });
+  };
 }
