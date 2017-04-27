@@ -33,13 +33,13 @@ export class WidgetComponent implements OnInit {
     }
   private openDialog() {
     if (this.modal === this.email[this.type].name) {
-      this.dialog.open(EmailSchedulerDialogComponent, {
+      this.dialog.open(this.email[this.type], {
         height: this.height350,
         width: this.width550
       });
     }
     if (this.modal === this.server[this.type].name) {
-      this.dialog.open(ServersConfiguratorDialogComponent, {
+      this.dialog.open(this.server[this.type], {
         height: this.height350,
         width: this.width550
       });
