@@ -391,5 +391,8 @@ module.exports = {
     "module": false,
     "clearImmediate": false,
     "setImmediate": false
+  },
+  "devServer": {
+    "historyApiFallback": false
   }
 };
