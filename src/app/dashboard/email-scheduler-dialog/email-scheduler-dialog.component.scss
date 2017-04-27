@@ -1,7 +1,6 @@
 @import '../../../styles/base/_variables.scss';
 
 .settings-form__title {
-  position: relative;
   top: -1rem;
   left: -1.42rem;
   width: calc(100% );
@@ -19,6 +18,7 @@
 .settings-form__close-button{
   float:right;
   display:block;
+  margin-top:-0.3rem;
   margin-right:0px;
   clear:left;
 }
