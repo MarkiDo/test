@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { LDAPComponent } from './ldap.component';
 
-import { ServersConfiguratorDialogComponent } from './servers-configurator-dialog.component';
-
-describe('ServersConfiguratorDialogComponent', () => {
-  let component: ServersConfiguratorDialogComponent;
-  let fixture: ComponentFixture<ServersConfiguratorDialogComponent>;
+describe('LDAPComponent', () => {
+  let component: LDAPComponent;
+  let fixture: ComponentFixture<LDAPComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ServersConfiguratorDialogComponent ]
+      declarations: [ LDAPComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ServersConfiguratorDialogComponent);
+    fixture = TestBed.createComponent(LDAPComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
