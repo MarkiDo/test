@@ -1,0 +1,35 @@
+@import '/base/_variables.scss';
+
+// radio
+.mat-radio-inner-circle { 
+  background-color: $matRadioCircle !important;
+}
+.mat-radio-checked .mat-radio-outer-circle {
+  border-color: $matRadioCircle !important;
+}
+.mat-radio-ripple .mat-ripple-element {   
+  background-color: rgba( $matRadioCircle, 0.26 ) !important;
+}
+.mat-radio-label-content {
+  font-size: 0.9rem !important;
+}
+// buttons
+.mat-raised-button{
+  color: $matRaisedButtonText !important;
+  text-transform: uppercase !important;
+  background-color: $matRaisedButton !important; 
+  font-weight: bold !important; 
+  box-shadow: none !important;
+}
+.mat-raised-button:hover{  
+  box-shadow: 0.0625rem 0.0625rem 0.125rem darken( $matRaisedButton, 50% ) !important;
+}
+// menu
+.mat-menu-content {
+  padding: 0 !important;
+}
+// dialog borders
+.mat-dialog-container {
+  border: 0.125rem solid $matDialogContainer !important;
+  border-radius: 0.3125rem !important;
+}
