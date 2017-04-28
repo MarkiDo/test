@@ -7,7 +7,7 @@ import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from './app.routing';
 import 'hammerjs';
-
+import {  } from 'jasmine';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './commons/header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,17 +15,25 @@ import { AdministrationComponent } from './administration/administration.compone
 import { WidgetComponent } from './dashboard//widget/widget.component';
 import { FooterComponent } from './commons/footer/footer.component';
 import { ItaUserSettingsComponent } from './commons/ita-user-settings/ita-user-settings.component';
-import { ItaUserTimeSettingsComponent } from './commons/ita-user-time-settings/ita-user-time-settings.component';
+import {
+  ItaUserTimeSettingsComponent
+} from './commons/ita-user-time-settings/ita-user-time-settings.component';
 import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-language.component';
-import { SettingsComponent,ServersConfigurator,EmailScheduler } from './dashboard/widget/settings/settings.component';
 import { AuthService } from './services/auth.service';
 import { FirebaseService, firebaseConfig } from './services/firebase.service';
 import { AngularFireModule } from 'angularfire2';
-import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
-import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {
+  EmailSchedulerDialogComponent
+} from './dashboard/email-scheduler-dialog/email-scheduler-dialog.component';
+import {
+  ServersConfiguratorDialogComponent
+} from './dashboard/servers-configurator-dialog/servers-configurator-dialog.component';
+import { TranslateService } from '@ngx-translate/core';
 
 export function HttpLoaderFactory(http: Http) {
-    return new TranslateHttpLoader(http, './src/i18n/', '.json');
+    return new TranslateHttpLoader(http, './src/assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -39,9 +47,8 @@ export function HttpLoaderFactory(http: Http) {
     ItaUserSettingsComponent,
     ItaUserTimeSettingsComponent,
     ItaUserLanguageComponent,
-    SettingsComponent,
-    ServersConfigurator,
-    EmailScheduler,
+    EmailSchedulerDialogComponent,
+    ServersConfiguratorDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,8 +69,16 @@ export function HttpLoaderFactory(http: Http) {
           }
         })
   ],
-  providers: [AuthService, FirebaseService],
-  entryComponents:[EmailScheduler,ServersConfigurator],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthService,
+    FirebaseService,
+    TranslateService,
+    EmailSchedulerDialogComponent,
+    ServersConfiguratorDialogComponent],
+  entryComponents: [
+    EmailSchedulerDialogComponent,
+    ServersConfiguratorDialogComponent
+  ],
+  bootstrap: [ AppComponent]
 })
 export class AppModule { }

@@ -1,10 +1,9 @@
-@import '../../../../styles/base/_variables.scss';
+@import '../../../styles/base/_variables.scss';
 
 .settings-form__title {
-  position: relative;
   top: -1rem;
   left: -1.42rem;
-  width: calc(100% + 2.9rem);
+  width: calc(100% );
   border-bottom: 0.25rem solid $borderColor;
   padding: 0 0 0.25rem 3rem;
   font-size: 1.5rem;
@@ -13,6 +12,13 @@
 .settings-form__button{
   float:right;
   display:block;
+  margin-right:0px;
+  clear:left;
+}
+.settings-form__close-button{
+  float:right;
+  display:block;
+  margin-top:-0.3rem;
   margin-right:0px;
   clear:left;
 }

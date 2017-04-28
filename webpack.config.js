@@ -60,12 +60,15 @@ module.exports = {
     ]
   },
   "output": {
-    "path": path.join(process.cwd(), "dist"),
+    "path": path.join(process.cwd(), "public"),
     "filename": "[name].bundle.js",
     "chunkFilename": "[id].chunk.js"
   },
   "module": {
     "rules": [
+      { 
+        "test": /.src\/assets\/i18n\/.*\.json$/,
+        "loader": "file-loader?name=src/assets/i18n/[name].[ext]" },
       {
         "test": /\.ts$/,
         "enforce": 'pre',
@@ -388,5 +391,8 @@ module.exports = {
     "module": false,
     "clearImmediate": false,
     "setImmediate": false
+  },
+  "devServer": {
+    "historyApiFallback": true
   }
 };
