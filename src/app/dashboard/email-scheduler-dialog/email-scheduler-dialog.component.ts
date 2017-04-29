@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'app/services/auth.service';
-import { FirebaseService } from 'app/services/firebase.service';
+import { AuthService } from '../../services/auth.service';
+import { FirebaseService } from '../../services/firebase.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
