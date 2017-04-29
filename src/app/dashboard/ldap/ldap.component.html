@@ -37,7 +37,14 @@
     </md-radio-group>
   </div>
 
-  <div *ngIf="radioState"></div>
+  <div *ngIf="radioState">
+    <md-input-container>
+      <input mdInput placeholder="{{'LDAP.HOST'|translate}}" type="text" name="username" required>
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="pass" type="text" name="userpass" required>
+    </md-input-container>
+  </div>
   <div class="settings-form__button" md-dialog-actions>
     <button md-raised-button type="submit" [disabled]="LDAPForm.invalid">{{'Settings.Save'|translate}}</button>
   </div>
