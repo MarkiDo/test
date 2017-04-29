@@ -1,33 +1,44 @@
-<form class="settings-form" #LDAPForm="ngForm" (ngSubmit)="onSubmit(LDAPForm.value)">
-   <div class="settings-form__close-button" md-dialog-actions>
-     <button md-dialog-close class="close" aria-label="Close"> <span aria-hidden="true">&times;</span>
+<form class="settings-form" #LDAPForm="ngForm" (ngSubmit)="onSubmit(LDAPForm.value)" novalidate>
+  <div class="settings-form__close-button" md-dialog-actions>
+    <button md-dialog-close class="close" aria-label="Close"> <span aria-hidden="true">&times;</span>
      </button>
-   </div>
-   <div class="settings-form__title">{{'LDAP.TTL'|translate}}</div>
-     <div class="settings-form__columns">
-       <div class="settings-form__labelbox">
+  </div>
+  <div class="settings-form__title">{{'LDAP.TTL'|translate}}</div>
+  <div class="settings-form__columns">
+    <div class="settings-form__labelbox">
       <label for="name">{{'LDAP.NAME'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="{{'LDAP.NAME'|translate}}" value="{{data?.form.hostName}}" name="ldap-name" ngModel>
+      <input mdInput #ldapName="ngModel" type="text" name="ldapName" [(ngModel)]="data?.form.ldapName" placeholder="{{'LDAP.NAME'|translate}}"
+        minlength="4" maxlength="16" pattern="[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)*\w+" required>
     </md-input-container>
+    <div class="settings-form__errorbox">
+      <i class="fa fa-exclamation-circle error-icon" *ngIf="ldapName.errors"></i>
+      <div class="settings-form__errors" *ngIf="ldapName.errors">
+        <p *ngIf="ldapName.errors?.required">Name is required</p>
+        <p *ngIf="ldapName.errors?.pattern">Only A-z and 0-9 is required. Also you may type several words.</p>
+        <p *ngIf="ldapName.errors?.minlength">minimal length in 4 symbols</p>
+        <p *ngIf="ldapName.errors?.maxlength">maximum length in 16 symbols</p>
+      </div>
+    </div>
   </div>
   <div class="settings-form__columns">
     <div class="settings-form__labelbox">
       <label for="description">{{'LDAP.HOST'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="{{'LDAP.HOST'|translate}}" value="{{data?.form.host}}" name="host" ngModel>
+      <input mdInput placeholder="{{'LDAP.HOST'|translate}}" type="text" name="host" [(ngModel)]="data?.form.host" required>
     </md-input-container>
   </div>
   <div class="settings-form__radio-group">
-    <md-radio-group>
+    <md-radio-group name="auth" [value]="ngModel" [(ngModel)]="radioState">
       <p>{{'LDAP.AUTTL'|translate}}:</p>
-      <md-radio-button value="save">{{'LDAP.ANON'|translate}} </md-radio-button>
-      <md-radio-button value="only_email">{{'LDAP.PSW'|translate}} </md-radio-button>
+      <md-radio-button *ngFor="let radioValue of radioValues" [id]="radioValue.name" [checked]="checked" [value]="radioValue.value">{{radioValue.translate|translate}}</md-radio-button>
     </md-radio-group>
   </div>
+
+  <div *ngIf="radioState"></div>
   <div class="settings-form__button" md-dialog-actions>
-    <button class="btn" type="submit">{{'Settings.Save'|translate}}</button>
+    <button md-raised-button type="submit" [disabled]="LDAPForm.invalid">{{'Settings.Save'|translate}}</button>
   </div>
 </form>

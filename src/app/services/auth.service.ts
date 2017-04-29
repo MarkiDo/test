@@ -19,7 +19,6 @@ export class AuthService {
         if (!error) {
           localStorage.setItem('profile', JSON.stringify(profile));
           this.profile = profile;
-          this.lock.hide();
         }
       });
       this.lock.hide();

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { AuthService } from 'app/services/auth.service';
 import { FirebaseService } from 'app/services/firebase.service';
 import { MdDialog } from '@angular/material';
 
@@ -9,21 +8,26 @@ import { MdDialog } from '@angular/material';
   templateUrl: './ldap.component.html',
   styleUrls: ['./ldap.component.scss']
 })
-export class LDAPComponent {
-  private hostName: string;
+export class LDAPComponent implements OnInit {
+  public radioState: any;
+  public radioValues: any[];
+  private ldapName: string;
   private host: string;
   private data: Object;
 
   constructor(
     private translate: TranslateService,
-    private auth: AuthService,
     private firebaseService: FirebaseService,
     public dialog: MdDialog) {
-    if (auth.authenticated()) {
       firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
-    }
   }
-  private onSubmit(form: any) {
+  public ngOnInit() {
+    this.radioValues = [
+      {name: 'anonymouse', translate: 'LDAP.ANON', value: false },
+      {name: 'pass', translate: 'LDAP.PSW', value: true }
+    ];
+  }
+  private onSubmit(form: any): void {
     this.data = { form };
     this.firebaseService.saveSettings(this.data);
   }
