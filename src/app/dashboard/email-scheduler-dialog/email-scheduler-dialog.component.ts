@@ -21,10 +21,10 @@ constructor(private translate: TranslateService,
             private firebaseService: FirebaseService) {
     firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
     this.emailScheduler = {
-      description: "",
-      name: ""
-    }  
-}
+      description: '',
+      name: ''
+    };
+  }
   private onSubmit(form: any) {
     this.newSettings = { form } ;
     this.firebaseService.saveSettings(this.newSettings);
