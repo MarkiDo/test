@@ -23,6 +23,11 @@
   <div class="alert alert-danger" *ngIf="EmailForm.get('description').invalid">
     <p>{{ 'Settings.ErrorValidationDescription' | translate }}</p>
   </div>
+  <div *ngIf="description.errors" class="alert alert-danger">
+    <div [hidden]="!description.errors.pattern">
+        <p>{{ 'Settings.ErrorValidationDescription' | translate }}</p>
+    </div>
+  </div>
   <div class="settings-form__button">
     <button class="btn btn-success" type="submit" [disabled]="EmailForm.invalid">{{'Settings.Save'|translate}} </button>
   </div>
