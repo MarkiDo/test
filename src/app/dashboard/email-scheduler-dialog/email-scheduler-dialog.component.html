@@ -17,14 +17,14 @@
       <label for="description">{{'Settings.Description'|translate}}:</label>
     </div>
     <md-input-container>
-      <div *ngIf="description.errors" class="alert alert-danger">
-        <div [hidden]="!description.errors.pattern">
-          <p>{{ 'Settings.ErrorValidationDescription' | translate }}</p>
-        </div>
-      </div>
       <textarea mdInput placeholder="Some Description" pattern="[A-Za-zА-Яа-я0-9\n\s,.?!:]+"  name="emailScheduler.description" #description="ngModel" [ngModel]="emailScheduler.description" value={{data?.name}}>
       </textarea>
    </md-input-container>
+  </div>
+  <div *ngIf="description.errors" class="alert alert-danger">
+    <div [hidden]="!description.errors.pattern">
+        <p>{{ 'Settings.ErrorValidationDescription' | translate }}</p>
+    </div>
   </div>
   <div class="settings-form__button">
     <button class="btn" type="submit">{{'Settings.Save'|translate}}</button>
