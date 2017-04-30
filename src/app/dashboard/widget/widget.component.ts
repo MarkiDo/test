@@ -24,14 +24,14 @@ export class WidgetComponent implements OnInit {
   public height350: string;
   public width550: string;
   constructor(public dialog: MdDialog,
-              private translate: TranslateService,
-              public email: EmailSchedulerDialogComponent,
-              public server: ServersConfiguratorDialogComponent ) { }
+    private translate: TranslateService,
+    public email: EmailSchedulerDialogComponent,
+    public server: ServersConfiguratorDialogComponent) { }
   public ngOnInit() {
-      this.height350 = '350px';
-      this.width550 = '550px';
-      this.type = 'constructor';
-    }
+    this.height350 = '350px';
+    this.width550 = '550px';
+    this.type = 'constructor';
+  }
   private openDialog() {
     if (this.modal === this.email[this.type].name) {
       this.openModal = this.email[this.type];
