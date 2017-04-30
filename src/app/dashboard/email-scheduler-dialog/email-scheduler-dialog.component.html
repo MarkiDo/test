@@ -1,4 +1,4 @@
-<form class="settings-form" #email_shedulerForm="ngForm" (ngSubmit)="onSubmit(email_shedulerForm.value)">
+<form class="settings-form" [formGroup]="EmailForm" novalidate (ngSubmit)="onSubmit($event)">
   <div class="settings-form__close-button" md-dialog-actions>
     <button md-dialog-close class="close" aria-label="Close"> <span aria-hidden="true">&times;</span>
 </button>
@@ -9,7 +9,7 @@
       <label for="name">{{'Settings.Scheduler_Name'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Name" name="name" value="{{data?.form.name}}" ngModel>
+      <input mdInput placeholder="Some Name" name="name" value="">
     </md-input-container>
   </div>
   <div class="settings-form__columns">
@@ -17,16 +17,13 @@
       <label for="description">{{'Settings.Description'|translate}}:</label>
     </div>
     <md-input-container>
-      <div *ngIf="description.errors" class="alert alert-danger">
-        <div [hidden]="!description.errors.pattern">
-          <p>{{ 'Settings.ErrorValidationDescription' | translate }}</p>
-        </div>
-      </div>
-      <textarea mdInput placeholder="Some Description" pattern="[A-Za-zА-Яа-я0-9\n\s,.?!:]+"  name="emailScheduler.description" #description="ngModel" [ngModel]="emailScheduler.description" value={{data?.name}}>
-      </textarea>
-   </md-input-container>
+      <textarea mdInput placeholder="Some Description" formControlName="description" value="" [ngModel]=data?.form.description pattern="^[A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ'0-9\n\s,.?!:]+$"></textarea>
+    </md-input-container>
+  </div>
+  <div class="alert alert-danger" *ngIf="EmailForm.get('description').invalid">
+    <p>{{ 'Settings.ErrorValidationDescription' | translate }}</p>
   </div>
   <div class="settings-form__button">
-    <button class="btn" type="submit">{{'Settings.Save'|translate}}</button>
+    <button class="btn btn-success" type="submit" [disabled]="EmailForm.invalid">{{'Settings.Save'|translate}} </button>
   </div>
 </form>

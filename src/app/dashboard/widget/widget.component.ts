@@ -21,14 +21,14 @@ export class WidgetComponent implements OnInit {
   @Input() public data: string;
   public type: string;
   public openModal: any;
-  public height350: string;
+  public height: string;
   public width550: string;
   constructor(public dialog: MdDialog,
               private translate: TranslateService,
               public email: EmailSchedulerDialogComponent,
               public server: ServersConfiguratorDialogComponent ) { }
   public ngOnInit() {
-      this.height350 = '350px';
+      this.height = 'auto';
       this.width550 = '550px';
       this.type = 'constructor';
     }
@@ -40,7 +40,7 @@ export class WidgetComponent implements OnInit {
       this.openModal = this.server[this.type];
     }
     this.dialog.open(this.openModal, {
-      height: this.height350,
+      height: this.height,
       width: this.width550
     });
   };
