@@ -20,7 +20,7 @@
       <label for="description">{{'Settings.Description'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Description" name="description" value="">
+      <input mdInput placeholder="Some Description" formControlName="description" value="" [ngModel]=data?.form.description>
     </md-input-container>
   </div>
   <div class="settings-form__button">
