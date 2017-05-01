@@ -31,6 +31,7 @@ import {
   LDAPComponent
 } from './dashboard/ldap/ldap.component';
 import { TranslateService } from '@ngx-translate/core';
+import { LdapDirective } from './dashboard/ldap/ldap.directive';
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http, './src/assets/i18n/', '.json');
@@ -49,6 +50,7 @@ export function HttpLoaderFactory(http: Http) {
     ItaUserLanguageComponent,
     EmailSchedulerDialogComponent,
     LDAPComponent,
+    LdapDirective,
   ],
   imports: [
     BrowserModule,

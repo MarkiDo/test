@@ -29,6 +29,10 @@
     "ANON": "Anonymous",
     "PSW": "Use Password",
     "NAME": "LDAP Name",
-    "HOST": "Host(s)"
+    "HOST": "Host(s)",
+    "ErrLDAPName": "Name is required. ",
+    "ErrLDAPNameRule": "Only A-z and 0-9 is required. Also you may type several words. ",
+    "minL4": "Minimal length is 4 symbols. ",
+    "maxL16": "Max length is 16 symbols. "
   }
 }

@@ -14,11 +14,11 @@
     </md-input-container>
     <div class="settings-form__errorbox">
       <i class="fa fa-exclamation-circle error-icon" *ngIf="ldapName.errors"></i>
-      <div class="settings-form__errors" *ngIf="ldapName.errors">
-        <p *ngIf="ldapName.errors?.required">Name is required</p>
-        <p *ngIf="ldapName.errors?.pattern">Only A-z and 0-9 is required. Also you may type several words.</p>
-        <p *ngIf="ldapName.errors?.minlength">minimal length in 4 symbols</p>
-        <p *ngIf="ldapName.errors?.maxlength">maximum length in 16 symbols</p>
+      <div class="settings-form__errors" *ngIf="ldapName.errors && (ldapName.dirty || ldapName.touched)">
+        <p [hidden]="!ldapName.errors.required">{{ 'LDAP.ErrLDAPName' | translate }}</p>
+        <p [hidden]="!ldapName.errors.minlength">{{ 'LDAP.minL4' | translate }}</p>
+        <p [hidden]="!ldapName.errors.maxlength">{{ 'LDAP.maxL16' | translate }}</p>
+        <p [hidden]="!ldapName.errors.pattern">{{ 'LDAP.ErrLDAPNameRule' | translate }}</p>
       </div>
     </div>
   </div>
@@ -27,8 +27,20 @@
       <label for="description">{{'LDAP.HOST'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="{{'LDAP.HOST'|translate}}" type="text" name="host" [(ngModel)]="data?.form.host" required>
+      <input mdInput #host="ngModel" itaLdap placeholder="{{'LDAP.HOST'|translate}}" type="text" name="host"
+        [(ngModel)]="data?.form.host" minlength="4" required>
     </md-input-container>
+    <div class="settings-form__errorbox">
+      <i class="fa fa-exclamation-circle error-icon" *ngIf="host.errors"></i>
+      <div class="settings-form__errors" *ngIf="host.errors && (host.dirty || host.touched)">
+        <p [hidden]="hostValidResult">
+          The address must be a hostname or an IP. The IP address must be 4 numbers separated by a period. Each number must be a value
+          from 0 to 255.( Example: 178.210.192.2 ). Also you can type a host name (Example: my.host.net ) or type IP and
+          host separated by comma.
+        </p>
+        <p [hidden]="!host.errors.minlength">{{ 'LDAP.minL4' | translate }}</p>
+      </div>
+    </div>
   </div>
   <div class="settings-form__radio-group">
     <md-radio-group name="auth" [value]="ngModel" [(ngModel)]="radioState">
@@ -36,16 +48,19 @@
       <md-radio-button *ngFor="let radioValue of radioValues" [id]="radioValue.name" [checked]="checked" [value]="radioValue.value">{{radioValue.translate|translate}}</md-radio-button>
     </md-radio-group>
   </div>
-
   <div *ngIf="radioState">
     <md-input-container>
-      <input mdInput placeholder="{{'LDAP.HOST'|translate}}" type="text" name="username" required>
+      <input mdInput placeholder="{{'LDAP.HOST'|translate}}" type="text" name="username" [(ngModel)]="data?.form.username" required>
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="pass" type="text" name="userpass" required>
+      <input mdInput placeholder="pass" type="password" name="userpass" [(ngModel)]="data?.form.userpass" required>
     </md-input-container>
   </div>
+  <!--<div class="">
+      <button md-raised-button type="file">Upload</button>-->
+  <!--<input type="file" placeholder="Upload" accept="image/*" name="userlogo" [(ngModel)]="data?.form.userlogo">-->
+  <!--</div>-->
   <div class="settings-form__button" md-dialog-actions>
-    <button md-raised-button type="submit" [disabled]="LDAPForm.invalid">{{'Settings.Save'|translate}}</button>
+    <button md-raised-button type="submit" [disabled]="LDAPForm.invalid && hostValidResult">{{'Settings.Save'|translate}}</button>
   </div>
 </form>

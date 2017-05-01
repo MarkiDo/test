@@ -11,23 +11,50 @@ import { MdDialog } from '@angular/material';
 export class LDAPComponent implements OnInit {
   public radioState: any;
   public radioValues: any[];
+  public hostString: string;
+  public hostValidResult: boolean;
+  public hostPatternIP: any;
+  public hostPatternDomain: any;
+  private iplist: any;
   private ldapName: string;
   private host: string;
+  private username: string;
+  private userlogo: any;
   private data: Object;
 
   constructor(
     private translate: TranslateService,
     private firebaseService: FirebaseService,
     public dialog: MdDialog) {
-      firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
+    firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
   }
   public ngOnInit() {
+    this.hostValidResult = false;
+    this.hostString = '';
+    this.hostPatternIP = new RegExp('^(([0-9]|[1-9][0-9]|1'
+      + '[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]'
+      + '|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$');
+    this.hostPatternDomain = new RegExp('^(([a-zA-Z]{1})|([a-zA-Z]{1}'
+      + '[a-zA-Z]{1})|([a-zA-Z]{1}[0-9]{1})|([0-9]{1}[a-zA-Z]'
+      + '{1})|([a-zA-Z0-9][a-zA-Z0-9-_]{1,61}[a-zA-Z0-9]))\.'
+      + '([a-zA-Z]{2,6}|[a-zA-Z0-9-]{2,30}\.[a-zA-Z]{2,3})$');
     this.radioValues = [
-      {name: 'anonymouse', translate: 'LDAP.ANON', value: false },
-      {name: 'pass', translate: 'LDAP.PSW', value: true }
+      { name: 'anonymouse', translate: 'LDAP.ANON', value: false },
+      { name: 'pass', translate: 'LDAP.PSW', value: true }
     ];
   }
+  // private hostValidate(value: string): any {
+  //   this.hostString = value;
+  //   this.iplist = this.hostString.split(',');
+  //   this.iplist.forEach((item: any) => {
+  //     if (this.hostPatternIP.test(item) || this.hostPatternDomain.test(item)) {
+  //       return this.hostValidResult = true;
+  //     }
+  //   });
+  // }
+
   private onSubmit(form: any): void {
+    console.log(form);
     this.data = { form };
     this.firebaseService.saveSettings(this.data);
   }
