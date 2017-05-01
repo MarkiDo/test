@@ -23,7 +23,8 @@
     "Only_email": "Only Email to Recipients",
     "Save": "Save",
     "ErrorValidationDescription": 
-    "Please enter valid description: A-Z symbols, numbers and following symbols “,”, “.”, “?”, “!”, “:” are allowed."
+    "Please enter valid description: A-Z symbols, numbers and following symbols “,”, “.”, “?”, “!”, “:” are allowed.",
+    "DescriptionPlaceholder": "Some description"
   }
 
 }

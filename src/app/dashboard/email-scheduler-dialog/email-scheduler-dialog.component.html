@@ -9,7 +9,7 @@
       <label for="name">{{'Settings.Scheduler_Name'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Name" name="name" value="">
+      <input mdInput placeholder="Some Name" name="name" value="{{data?.form.name}}">
     </md-input-container>
   </div>
   <div class="settings-form__columns">
@@ -17,16 +17,11 @@
       <label for="description">{{'Settings.Description'|translate}}:</label>
     </div>
     <md-input-container>
-      <textarea mdInput placeholder="Some Description" formControlName="description" value="" [ngModel]=data?.form.description pattern="^[A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ'0-9\n\s,.?!:]+$"></textarea>
+      <textarea mdInput placeholder="{{ 'Settings.DescriptionPlaceholder' | translate }}" formControlName="description" value="" [ngModel]=data?.form.description pattern="^[A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ'0-9\n\s,.?!:]+$"></textarea>
     </md-input-container>
   </div>
   <div class="alert alert-danger" *ngIf="EmailForm.get('description').invalid">
     <p>{{ 'Settings.ErrorValidationDescription' | translate }}</p>
-  </div>
-  <div *ngIf="description.errors" class="alert alert-danger">
-    <div [hidden]="!description.errors.pattern">
-        <p>{{ 'Settings.ErrorValidationDescription' | translate }}</p>
-    </div>
   </div>
   <div class="settings-form__button">
     <button class="btn btn-success" type="submit" [disabled]="EmailForm.invalid">{{'Settings.Save'|translate}} </button>
