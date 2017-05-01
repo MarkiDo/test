@@ -23,9 +23,9 @@ private newSettings: Object;
 constructor(private translate: TranslateService,
             private auth: AuthService,
             private firebaseService: FirebaseService,
-            public fb: FormBuilder) {if(auth.authenticated()){
+            public fb: FormBuilder){
             firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
-            }}
+            }
 
   private onSubmit(form, event) {
     form = this.EmailForm.value;
