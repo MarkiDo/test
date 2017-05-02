@@ -11,11 +11,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class EmailSchedulerDialogComponent {
 @Input() public modal: string;
+public data: Object;
 public description: any;
-private EmailForm = this.fb.group( {
+public EmailForm = this.fb.group( {
     description: ['', Validators.pattern]
   } );
-private data: Object;
 private newSettings: Object;
 
 constructor(private translate: TranslateService,
@@ -25,7 +25,7 @@ constructor(private translate: TranslateService,
             firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
             }
 
-  private onSubmit(form, event) {
+  public onSubmit(form, event) {
     form = this.EmailForm.value;
     this.newSettings = { form } ;
     this.firebaseService.saveSettings(this.newSettings);
