@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
-
+import { AUTH0_CONFIG } from './auth0.config';
 @Injectable()
 export class AuthService {
   public profile: Object;
   private Auth0Lock = require('auth0-lock').default;
-  private lock = new this.Auth0Lock('g92ByoNQKvIcIjtJvCGps05BK6Rtw6bC', 'lv-232.eu.auth0.com', {
+  private lock = new this.Auth0Lock(AUTH0_CONFIG.clientID, AUTH0_CONFIG.domain, {
     closable: false,
     auth: {
       redirect: false,
