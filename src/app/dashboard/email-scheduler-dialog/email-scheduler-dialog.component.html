@@ -4,12 +4,20 @@
 </button>
   </div>
   <div class="settings-form__title">{{'Settings.Email_Scheduler'|translate}}</div>
+  <div class="settings-form__results">
+    <div [hidden]="!saved" class="alert alert-success">
+      Settings saved successfully!
+    </div>
+    <div [hidden]="!error" class ="alert alert-danger">
+      Error during settings save, try again later.
+    </div>
+  </div>
   <div class="settings-form__columns">
     <div class="settings-form__labelbox">
       <label for="name">{{'Settings.Scheduler_Name'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Name" name="name" value="{{data?.form.name}}" ngModel>
+      <input mdInput placeholder="Some Name" name="name" ngModel="{{settings?.name}}">
     </md-input-container>
   </div>
   <div class="settings-form__columns">
@@ -17,7 +25,7 @@
       <label for="description">{{'Settings.Description'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Description" name="description" value="{{data?.form.description}}" ngModel>
+      <input mdInput placeholder="Some Description" name="description"  ngModel="{{settings?.description}}">
     </md-input-container>
   </div>
   <div class="settings-form__button">
