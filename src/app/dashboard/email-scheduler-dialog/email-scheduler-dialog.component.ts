@@ -10,8 +10,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class EmailSchedulerDialogComponent {
 public name: string = '';
+public data: Object;
 private description: string = '';
-private data: Object;
 private newSettings: Object;
 
 constructor(private translate: TranslateService,
@@ -21,7 +21,7 @@ constructor(private translate: TranslateService,
     firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
     }
   }
-  private onSubmit(form: any) {
+  public onSubmit(form: any) {
     this.newSettings = { form } ;
     this.firebaseService.saveSettings(this.newSettings);
   }
