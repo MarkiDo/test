@@ -15,6 +15,7 @@ public data: Object;
 public description: any;
 public EmailForm: any;
 private newSettings: Object;
+private option: string;
 
 constructor(private translate: TranslateService,
             private auth: AuthService,
