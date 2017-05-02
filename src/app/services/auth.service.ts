@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
 import { AUTH0_CONFIG } from './auth0.config';
+import { Router } from '@angular/router';
 @Injectable()
 export class AuthService {
   public profile: Object;
@@ -11,7 +12,7 @@ export class AuthService {
       redirect: false,
     }
   });
-  constructor() {
+  constructor(private router: Router) {
     this.profile = JSON.parse(localStorage.getItem('profile'));
     this.lock.on('authenticated', (authResult) => {
       localStorage.setItem('id_token', authResult.idToken);
@@ -19,9 +20,10 @@ export class AuthService {
         if (!error) {
           localStorage.setItem('profile', JSON.stringify(profile));
           this.profile = profile;
+          this.lock.hide();
+          router.navigate(['/dashboard']);
         }
       });
-      this.lock.hide();
     });
   }
 
