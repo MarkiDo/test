@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DashboardComponent } from 'app/dashboard/dashboard.component';
+import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { MdDialog } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
 

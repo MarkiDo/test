@@ -10,14 +10,18 @@ $black: #000;
 /***************************************/
 /* color for active links in header */
 $activeLink: $orangePeel;
-/*User Settings Component*/
+/* User Settings Component */
 $userSettingsBoxShadow: $darkGray;
 $userSettingsBoxBorder: $softOrange;
-$userSettingsItemHoverText: $white;
-$userSettingsItemHoverShadow: $vividOrange;
+$userSettingsItemHoverText: $black;
 /* main color for borders etc*/
 $borderColor: $navajoWhite;
 /* default color for text*/
 $defTextColor: $black;
-
 $widgetHover: $orangePeel;
+
+/* Angular Material Overriding Colors*/
+$matRadioCircle: $orangePeel;
+$matRaisedButton: $navajoWhite;
+$matRaisedButtonText: $black;
+$matDialogContainer: $navajoWhite

@@ -7,7 +7,7 @@ import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from './app.routing';
 import 'hammerjs';
-import {  } from 'jasmine';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './commons/header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,9 +15,8 @@ import { AdministrationComponent } from './administration/administration.compone
 import { WidgetComponent } from './dashboard//widget/widget.component';
 import { FooterComponent } from './commons/footer/footer.component';
 import { ItaUserSettingsComponent } from './commons/ita-user-settings/ita-user-settings.component';
-import {
-  ItaUserTimeSettingsComponent
-} from './commons/ita-user-time-settings/ita-user-time-settings.component';
+import { ItaUserTimeSettingsComponent }
+  from './commons/ita-user-time-settings/ita-user-time-settings.component';
 import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-language.component';
 import { AuthService } from './services/auth.service';
 import { FirebaseService, firebaseConfig } from './services/firebase.service';
@@ -80,6 +79,6 @@ export function HttpLoaderFactory(http: Http) {
     EmailSchedulerDialogComponent,
     LDAPComponent
   ],
-  bootstrap: [ AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {}

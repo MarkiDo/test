@@ -8,10 +8,11 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./email-scheduler-dialog.component.scss']
 })
 export class EmailSchedulerDialogComponent {
-public name: string = '';
+public name: string;
 public data: Object;
-private description: string = '';
+private description: string;
 private newSettings: Object;
+private option: string;
 
 constructor(private translate: TranslateService,
             private firebaseService: FirebaseService) {
