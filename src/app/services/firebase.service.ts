@@ -2,14 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFire, AngularFireModule, FirebaseObjectObservable } from 'angularfire2';
 import { NgModule } from '@angular/core';
 import { AuthService } from './auth.service';
-export const firebaseConfig = {
-  apiKey: 'AIzaSyDixjnPMmEOpg-rQI9zxwL_XYECAVGVyzs',
-  authDomain: 'ita-cloud.firebaseapp.com',
-  databaseURL: 'https://ita-cloud.firebaseio.com',
-  projectId: 'ita-cloud',
-  storageBucket: 'ita-cloud.appspot.com',
-  messagingSenderId: '991449581591'
-};
 @Injectable()
 export class FirebaseService {
   public settings: FirebaseObjectObservable<any>;
