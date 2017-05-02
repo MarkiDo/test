@@ -32,7 +32,7 @@ export class WidgetComponent implements OnInit {
       this.width550 = '550px';
       this.type = 'constructor';
     }
-  private openDialog() {
+  public openDialog() {
     if (this.modal === this.email[this.type].name) {
       this.openModal = this.email[this.type];
     }

@@ -2,34 +2,35 @@
 
 // radio
 .mat-radio-inner-circle { 
-  background-color: $matRadioCircle !important;
+  background-color: $matRadioCircle;
 }
 .mat-radio-checked .mat-radio-outer-circle {
-  border-color: $matRadioCircle !important;
+  border-color: $matRadioCircle;
 }
 .mat-radio-ripple .mat-ripple-element {   
-  background-color: rgba( $matRadioCircle, 0.26 ) !important;
+  background-color: rgba( $matRadioCircle, 0.26 );
 }
 .mat-radio-label-content {
-  font-size: 0.9rem !important;
+  font-size: 0.9rem;
 }
 // buttons
 .mat-raised-button{
-  color: $matRaisedButtonText !important;
-  text-transform: uppercase !important;
-  background-color: $matRaisedButton !important; 
-  font-weight: bold !important; 
-  box-shadow: none !important;
+  color: $matRaisedButtonText;
+  text-transform: uppercase;
+  background-color: $matRaisedButton; 
+  font-weight: bold; 
+  box-shadow: none;
 }
 .mat-raised-button:hover{  
-  box-shadow: 0.0625rem 0.0625rem 0.125rem darken( $matRaisedButton, 50% ) !important;
+  box-shadow: 0.0625rem 0.0625rem 0.125rem darken( $matRaisedButton, 50% );
 }
 // menu
 .mat-menu-content {
-  padding: 0 !important;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 // dialog borders
 .mat-dialog-container {
-  border: 0.125rem solid $matDialogContainer !important;
-  border-radius: 0.3125rem !important;
+  border: 0.125rem solid $matDialogContainer;
+  border-radius: 0.3125rem;
 }
