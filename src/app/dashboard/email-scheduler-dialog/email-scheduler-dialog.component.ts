@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'app/services/auth.service';
 import { FirebaseService } from 'app/services/firebase.service';
-import { TranslateService } from '@ngx-translate/core';
 import { EmailSchedulerSettings } from './email-scheduler-settings.model';
 @Component({
   selector: 'ita-email-scheduler-dialog',
@@ -14,9 +12,7 @@ export class EmailSchedulerDialogComponent {
   public saved: boolean;
   public error: boolean;
   private description: string = '';
-  constructor(private translate: TranslateService,
-              private auth: AuthService,
-              private firebaseService: FirebaseService) {
+  constructor(private firebaseService: FirebaseService) {
     firebaseService.getSettings().subscribe((result) => {
       this.settings = new EmailSchedulerSettings(result.EmailSchedulerSettings);
     });
