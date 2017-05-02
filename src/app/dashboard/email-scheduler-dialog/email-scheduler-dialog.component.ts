@@ -7,11 +7,9 @@ import { EmailSchedulerSettings } from './email-scheduler-settings.model';
   styleUrls: ['./email-scheduler-dialog.component.scss']
 })
 export class EmailSchedulerDialogComponent {
-  public name: string = '';
   public settings: EmailSchedulerSettings;
   public saved: boolean;
   public error: boolean;
-  private description: string = '';
   constructor(private firebaseService: FirebaseService) {
     firebaseService.getSettings().subscribe((result) => {
       this.settings = new EmailSchedulerSettings(result.EmailSchedulerSettings);
