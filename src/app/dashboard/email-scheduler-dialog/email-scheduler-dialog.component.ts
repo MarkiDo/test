@@ -9,9 +9,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class EmailSchedulerDialogComponent {
 public name: string;
+private data: Object;
 private description: string;
 private option: string;
-private data: Object;
 private newSettings: Object;
 
 constructor(private translate: TranslateService,
