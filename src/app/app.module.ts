@@ -74,6 +74,7 @@ export function HttpLoaderFactory(http: Http) {
     FirebaseService,
     TranslateService,
     EmailSchedulerDialogComponent,
+    LDAPComponent
     ],
   entryComponents: [
     EmailSchedulerDialogComponent,

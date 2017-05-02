@@ -7,8 +7,8 @@ import {
   EmailSchedulerDialogComponent
 } from '../email-scheduler-dialog/email-scheduler-dialog.component';
 import {
-  ServersConfiguratorDialogComponent
-} from '../servers-configurator-dialog/servers-configurator-dialog.component';
+  LDAPComponent
+} from '../ldap/ldap.component';
 @Component({
   selector: 'ita-widget',
   templateUrl: './widget.component.html',
@@ -21,15 +21,15 @@ export class WidgetComponent implements OnInit {
   @Input() public data: string;
   public type: string;
   public openModal: any;
-  public height350: string;
-  public width550: string;
+  public height: string;
+  public width600: string;
   constructor(public dialog: MdDialog,
               private translate: TranslateService,
               public email: EmailSchedulerDialogComponent,
-              public server: ServersConfiguratorDialogComponent ) { }
+              public server: LDAPComponent ) { }
   public ngOnInit() {
-      this.height350 = '350px';
-      this.width550 = '550px';
+      this.height = 'auto';
+      this.width600 = '600px';
       this.type = 'constructor';
     }
   public openDialog() {
@@ -40,8 +40,8 @@ export class WidgetComponent implements OnInit {
       this.openModal = this.server[this.type];
     }
     this.dialog.open(this.openModal, {
-      height: this.height350,
-      width: this.width550
+      height: this.height,
+      width: this.width600
     });
   };
 }

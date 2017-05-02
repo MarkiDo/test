@@ -35,13 +35,14 @@
       <div class="settings-form__errors" *ngIf="host.errors && (host.dirty || host.touched)">
         <p [hidden]="!host.errors.required">{{ 'LDAP.hostReqFAQ' | translate }}</p>
         <p [hidden]="!host.errors.minlength">{{ 'LDAP.minL4' | translate }}</p>
+        <p [hidden]="!host.errors.pattern">{{ 'LDAP.hostReqFAQ' | translate }}</p>
       </div>
     </div>
   </div>
   <div class="settings-form__radio-group">
-    <md-radio-group name="auth" [value]="ngModel" [(ngModel)]="radioState">
+    <md-radio-group name="auth" value="ngModel" [(ngModel)]="radioState">
       <p>{{'LDAP.AUTTL'|translate}}:</p>
-      <md-radio-button *ngFor="let radioValue of radioValues" [id]="radioValue.name" [checked]="checked" [value]="radioValue.value">{{radioValue.translate|translate}}</md-radio-button>
+      <md-radio-button *ngFor="let radioValue of radioValues" [id]="radioValue.name" [value]="radioValue.value">{{radioValue.translate|translate}}</md-radio-button>
     </md-radio-group>
   </div>
   <div *ngIf="radioState">

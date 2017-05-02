@@ -17,12 +17,11 @@ export class LDAPComponent implements OnInit {
   public hostPatternName: string;
   public hostPatternPass: string;
   public hostPatternLDAPName: string;
-  private iplist: any;
-  private ldapName: string;
-  private host: string;
-  private username: string;
-  private userpass: string;
-  private data: Object;
+  public data: Object;
+  public ldapName: string;
+  public host: string;
+  public username: string;
+  public userpass: string;
 
   constructor(
     private translate: TranslateService,
@@ -35,20 +34,16 @@ export class LDAPComponent implements OnInit {
     this.hostPatternLDAPName = '[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)*';
     this.hostPatternName = '[a-zA-Z0-9]+';
     this.hostPatternPass = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$';
-    this.hostPatternIP = '^(([0-9]|[1-9][0-9]|1'
-      + '[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]'
-      + '|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$';
-    this.hostPatternDomain = '^(([a-zA-Z]{1})|([a-zA-Z]{1}'
-      + '[a-zA-Z]{1})|([a-zA-Z]{1}[0-9]{1})|([0-9]{1}[a-zA-Z]'
-      + '{1})|([a-zA-Z0-9][a-zA-Z0-9-_]{1,61}[a-zA-Z0-9]))\.'
-      + '([a-zA-Z]{2,6}|[a-zA-Z0-9-]{2,30}\.[a-zA-Z]{2,3})$';
+    this.hostPatternIP = `^(([0-9]|[1-9][0-9]|1
+      [0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]
+      |[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$`;
     this.radioValues = [
       { name: 'anonymouse', translate: 'LDAP.ANON', value: false },
       { name: 'pass', translate: 'LDAP.PSW', value: true }
     ];
   }
 
-  private onSubmit(form: any): void {
+  public onSubmit(form: any): void {
     console.log(form);
     this.data = { form };
     this.firebaseService.saveSettings(this.data);
