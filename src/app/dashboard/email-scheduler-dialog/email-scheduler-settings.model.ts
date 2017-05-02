@@ -1,8 +1,13 @@
+export interface SettingsDate {
+  day: number;
+  month: number;
+  year: number;
+}
 export class EmailSchedulerSettings {
   public name: string;
   public description: string;
   public option: string;
-  public date: Object;
+  public date: SettingsDate;
   constructor(obj?: any) {
     this.name = obj && obj.name || null;
     this.description = obj && obj.description || null;
