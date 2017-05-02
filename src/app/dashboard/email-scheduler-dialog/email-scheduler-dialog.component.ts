@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FirebaseService } from 'app/services/firebase.service';
+import { FirebaseService } from './../../services/firebase.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
