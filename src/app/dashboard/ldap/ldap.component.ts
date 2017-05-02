@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { FirebaseService } from 'app/services/firebase.service';
+import { FirebaseService } from '../../services/firebase.service';
 import { MdDialog } from '@angular/material';
 
 @Component({
