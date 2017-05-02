@@ -1,4 +1,4 @@
-export class Settings {
+export class EmailSchedulerSettings {
   public name: string;
   public description: string;
   public option: string;

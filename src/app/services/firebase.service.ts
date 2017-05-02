@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFire, AngularFireModule, FirebaseObjectObservable } from 'angularfire2';
 import { NgModule } from '@angular/core';
 import { AuthService } from './auth.service';
-import { Settings } from 'app/dashboard/email-scheduler-dialog/settings.model';
+import { EmailSchedulerSettings } from
+        'app/dashboard/email-scheduler-dialog/email-scheduler-settings.model';
 @Injectable()
 export class FirebaseService {
   public settings: FirebaseObjectObservable<any>;
@@ -17,7 +18,7 @@ export class FirebaseService {
     return this.settings;
   }
 
-  public saveSettings(newSettings: Settings) {
+  public saveEmailSchedulerSettings(newSettings: EmailSchedulerSettings) {
     this.userData = this.getSettings();
     return this.userData.set({ EmailSchedulerSettings: newSettings });
   }
