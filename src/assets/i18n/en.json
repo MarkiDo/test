@@ -30,9 +30,15 @@
     "PSW": "Use Password",
     "NAME": "LDAP Name",
     "HOST": "Host(s)",
-    "ErrLDAPName": "Name is required. ",
+    "ERReqFied": "Field is required. ",
     "ErrLDAPNameRule": "Only A-z and 0-9 is required. Also you may type several words. ",
     "minL4": "Minimal length is 4 symbols. ",
-    "maxL16": "Max length is 16 symbols. "
+    "minL8": "Minimal length is 8 symbols. ",
+    "maxL16": "Max length is 16 symbols. ",
+    "hostReqFAQ": "The address must be a hostname or an IP. The IP address must be 4 numbers separated by a period. Each number must be a value from 0 to 255.( Example: 178.210.192.2 ). Also you can type a host name (Example: my.host.net ) or type IP and host separated by comma. ",
+    "usrnameLabel": "Login",
+    "usrpassLabel": "Password",
+    "ErrNameREGEX": "Only A-z and 0-9 is required.",
+    "ErrPassREGEX": "You should type at least: 1 number, 1 lowercase letter, 1 uppercase letter, at least 1 special character. "
   }
 }
