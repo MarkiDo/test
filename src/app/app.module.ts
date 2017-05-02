@@ -32,6 +32,7 @@ import {
   ServersConfiguratorDialogComponent
 } from './dashboard/servers-configurator-dialog/servers-configurator-dialog.component';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthProvider } from './services/auth0.config';
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http, './src/assets/i18n/', '.json');
@@ -75,7 +76,9 @@ export function HttpLoaderFactory(http: Http) {
     FirebaseService,
     TranslateService,
     EmailSchedulerDialogComponent,
-    ServersConfiguratorDialogComponent],
+    ServersConfiguratorDialogComponent,
+    AuthProvider
+    ],
   entryComponents: [
     EmailSchedulerDialogComponent,
     ServersConfiguratorDialogComponent
