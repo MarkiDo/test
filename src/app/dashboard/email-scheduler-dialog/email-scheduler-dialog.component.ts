@@ -11,8 +11,8 @@ export class EmailSchedulerDialogComponent {
 public name: string;
 private data: Object;
 private description: string;
-private option: string;
 private newSettings: Object;
+private option: string;
 
 constructor(private translate: TranslateService,
             private firebaseService: FirebaseService) {
