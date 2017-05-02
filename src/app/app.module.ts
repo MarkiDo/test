@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { HttpModule, JsonpModule, Http } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
@@ -55,6 +55,8 @@ export function HttpLoaderFactory(http: Http) {
     FormsModule,
     HttpModule,
     routing,
+    FormBuilder,
+    Validators, 
     ReactiveFormsModule,
     JsonpModule,
     NgbModule.forRoot(),

@@ -13,9 +13,11 @@ export class EmailSchedulerDialogComponent {
 @Input() public modal: string;
 public name: string;
 public description: string;
+public option: string;
 private EmailForm = this.fb.group( {
-    name: ['', Validators.required],
-    description: ['', Validators.required]
+    name: ['', Validators.required, Validators.pattern('^[A-Za-z0-9]*$')],
+    description: ['', Validators.required],
+    option: ['']
   } );
 private data: Object;
 private newSettings: Object;
@@ -27,8 +29,9 @@ constructor(private translate: TranslateService,
             firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
             }
 
-  private onSubmit(form, event) {
+  private onSubmit(form) {
     form = this.EmailForm.value;
+    console.log(form)
     this.newSettings = { form } ;
     this.firebaseService.saveSettings(this.newSettings);
   }
