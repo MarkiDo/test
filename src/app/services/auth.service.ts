@@ -21,7 +21,6 @@ export class AuthService implements AuthServiceInterface {
         redirect: false,
       }
     });
-    console.log(config.clientID);
     this.profile = JSON.parse(localStorage.getItem('profile'));
     this.lock.on('authenticated', (authResult) => {
       localStorage.setItem('id_token', authResult.idToken);
