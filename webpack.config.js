@@ -56,6 +56,7 @@ module.exports = {
       "./node_modules/font-awesome/css/font-awesome.css",
       "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
       "./src/styles/vendor_extension/bootstrap.scss",
+      "./src/styles/override_material_styles.scss",
       "./src/styles.css"
     ]
   },
@@ -111,6 +112,7 @@ module.exports = {
           path.join(process.cwd(), "node_modules/font-awesome/css/font-awesome.css"),
           path.join(process.cwd(), "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"),
           path.join(process.cwd(), "src/styles/vendor_extension/bootstrap.scss"),
+          path.join(process.cwd(), "src/styles/override_material_styles.scss"),
           path.join(process.cwd(), "src/styles.css")
         ],
         "test": /\.css$/,
@@ -130,6 +132,7 @@ module.exports = {
           path.join(process.cwd(), "node_modules/font-awesome/css/font-awesome.css"),
           path.join(process.cwd(), "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"),
           path.join(process.cwd(), "src/styles/vendor_extension/bootstrap.scss"),
+          path.join(process.cwd(), "src/styles/override_material_styles.scss"),
           path.join(process.cwd(), "src/styles.css")
         ],
         "test": /\.scss$|\.sass$/,
@@ -150,6 +153,7 @@ module.exports = {
           path.join(process.cwd(), "node_modules/font-awesome/css/font-awesome.css"),
           path.join(process.cwd(), "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"),
           path.join(process.cwd(), "src/styles/vendor_extension/bootstrap.scss"),
+          path.join(process.cwd(), "src/styles/override_material_styles.scss"),
           path.join(process.cwd(), "src/styles.css")
         ],
         "test": /\.less$/,
@@ -170,6 +174,7 @@ module.exports = {
           path.join(process.cwd(), "node_modules/font-awesome/css/font-awesome.css"),
           path.join(process.cwd(), "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"),
           path.join(process.cwd(), "src/styles/vendor_extension/bootstrap.scss"),
+          path.join(process.cwd(), "src/styles/override_material_styles.scss"),
           path.join(process.cwd(), "src/styles.css")
         ],
         "test": /\.styl$/,
@@ -190,6 +195,7 @@ module.exports = {
           path.join(process.cwd(), "node_modules/font-awesome/css/font-awesome.css"),
           path.join(process.cwd(), "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"),
           path.join(process.cwd(), "src/styles/vendor_extension/bootstrap.scss"),
+          path.join(process.cwd(), "src/styles/override_material_styles.scss"),
           path.join(process.cwd(), "src/styles.css")
         ],
         "test": /\.css$/,
@@ -212,6 +218,7 @@ module.exports = {
           path.join(process.cwd(), "node_modules/font-awesome/css/font-awesome.css"),
           path.join(process.cwd(), "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"),
           path.join(process.cwd(), "src/styles/vendor_extension/bootstrap.scss"),
+          path.join(process.cwd(), "src/styles/override_material_styles.scss"),
           path.join(process.cwd(), "src/styles.css")
         ],
         "test": /\.scss$|\.sass$/,
@@ -235,6 +242,7 @@ module.exports = {
           path.join(process.cwd(), "node_modules/font-awesome/css/font-awesome.css"),
           path.join(process.cwd(), "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"),
           path.join(process.cwd(), "src/styles/vendor_extension/bootstrap.scss"),
+          path.join(process.cwd(), "src/styles/override_material_styles.scss"),
           path.join(process.cwd(), "src/styles.css")
         ],
         "test": /\.less$/,
@@ -258,6 +266,7 @@ module.exports = {
           path.join(process.cwd(), "node_modules/font-awesome/css/font-awesome.css"),
           path.join(process.cwd(), "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"),
           path.join(process.cwd(), "src/styles/vendor_extension/bootstrap.scss"),
+          path.join(process.cwd(), "src/styles/override_material_styles.scss"),
           path.join(process.cwd(), "src/styles.css")
         ],
         "test": /\.styl$/,
