@@ -3,7 +3,7 @@ import { AngularFire, AngularFireModule, FirebaseObjectObservable } from 'angula
 import { NgModule } from '@angular/core';
 import { AuthService } from './auth.service';
 import { EmailSchedulerSettings } from
-        'app/dashboard/email-scheduler-dialog/email-scheduler-settings.model';
+  'app/dashboard/email-scheduler-dialog/email-scheduler-settings.model';
 @Injectable()
 export class FirebaseService {
   public settings: FirebaseObjectObservable<any>;
@@ -17,7 +17,15 @@ export class FirebaseService {
     this.settings = this.angularFire.database.object('/users/' + this.user.user_id);
     return this.settings;
   }
-
+  public saveSettings(newSettings: Object) {
+    this.userData = this.getSettings();
+    this.userData.set({ settings: newSettings }).then((success) => {
+      console.log('Settings saved successfully');
+    })
+      .catch((error) => {
+        console.log('Error during settings saving: ' + error);
+      });
+  }
   public saveEmailSchedulerSettings(newSettings: EmailSchedulerSettings) {
     this.userData = this.getSettings();
     return this.userData.set({ EmailSchedulerSettings: newSettings });
