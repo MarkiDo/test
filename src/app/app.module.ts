@@ -9,7 +9,6 @@ import { routing } from './app.routing';
 import 'hammerjs';
 import {  } from 'jasmine';
 import { AppComponent } from './app.component';
-import { APP_CONFIG, DIALOG_CONFIG  } from './app-config';
 import { HeaderComponent } from './commons/header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdministrationComponent } from './administration/administration.component';
@@ -70,7 +69,7 @@ export function HttpLoaderFactory(http: Http) {
           }
         })
   ],
-  providers: [{provide: APP_CONFIG, useValue: DIALOG_CONFIG },
+  providers: [
     AuthService,
     FirebaseService,
     TranslateService,
