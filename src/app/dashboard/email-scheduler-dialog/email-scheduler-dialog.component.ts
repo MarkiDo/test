@@ -14,6 +14,10 @@ export class EmailSchedulerDialogComponent implements OnInit {
 @Input() public modal: string;
 public description: string;
 public EmailForm: FormGroup;
+public langs = [
+            {value: 'lang-0', viewValue: 'Українська'},
+            {value: 'lang-1', viewValue: 'English'}
+  ];
 public option: string;
 public name: string;
 public newSettings: Object;
