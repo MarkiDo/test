@@ -20,7 +20,8 @@
     "Options": "Options",
     "Save_and_email": "Save and Email to Recipients",
     "Only_email": "Only Email to Recipients",
-    "Save": "Save"
+    "Save": "Save",
+    "DescriptionPlaceholder": "Some description"
   },
   "LDAP": {
     "TTL": "LDAP Configuration",
