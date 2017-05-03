@@ -1,6 +1,6 @@
 <form class="settings-form" [formGroup]="EmailForm" novalidate (ngSubmit)="onSubmit($event)">
   <div class="settings-form__close-button" md-dialog-actions>
-    <button md-dialog-close class="close" aria-label="Close"> <span aria-hidden="true">&times;</span>
+    <button md-dialog-close class="close" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i>
 </button>
   </div>
   <div class="settings-form__title">{{'Settings.Email_Scheduler'|translate}}</div>
@@ -9,7 +9,7 @@
       <label for="name">{{'Settings.Scheduler_Name'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Name" name="name" value="{{data?.form.name}}">
+      <input mdInput placeholder="Some Name" name="name" ngModel="{{data?.form.name}}">
     </md-input-container>
   </div>
   <div class="settings-form__columns">
@@ -22,6 +22,19 @@
   </div>
   <div class="alert alert-danger" *ngIf="EmailForm.get('description').hasError('pattern')">
     <p>{{ 'Settings.ErrorValidationDescription' | translate }}</p>
+  </div>
+  <div class="row settings-form__radio-group">
+    <div class="col-sm-3">{{'Settings.Options'|translate}}:</div>
+    <div class="col-sm-8">
+      <md-radio-group ngModel="{{data?.form.option}}" name="option">
+        <md-radio-button value="save">
+        {{'Settings.Save_and_email'|translate}}
+        </md-radio-button>
+        <md-radio-button value="only_email">
+        {{'Settings.Only_email'|translate}}
+        </md-radio-button>
+      </md-radio-group>
+    </div>
   </div>
   <div class="settings-form__button">
     <button class="btn btn-success" type="submit" [disabled]="EmailForm.invalid">{{'Settings.Save'|translate}} </button>

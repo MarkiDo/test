@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from 'app/services/auth.service';
-import { FirebaseService } from 'app/services/firebase.service';
+import { AuthService } from '../../services/auth.service';
+import { FirebaseService } from '../../services/firebase.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -9,23 +9,26 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './email-scheduler-dialog.component.html',
   styleUrls: ['./email-scheduler-dialog.component.scss']
 })
-export class EmailSchedulerDialogComponent {
+export class EmailSchedulerDialogComponent implements OnInit {
 @Input() public modal: string;
+public data: Object;
 public description: any;
-private EmailForm = this.fb.group( {
-    description: ['', Validators.pattern]
-  } );
-private data: Object;
+public EmailForm: any;
 private newSettings: Object;
+private option: string;
 
 constructor(private translate: TranslateService,
             private auth: AuthService,
             private firebaseService: FirebaseService,
-            public fb: FormBuilder) {
-            firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
+            public formBuilder: FormBuilder) {
+              firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
             }
-
-  private onSubmit(form, event) {
+  public ngOnInit() {
+    this.EmailForm = this.formBuilder.group( {
+    description: ['', Validators.pattern]
+  } );
+  }
+  public onSubmit(form, event) {
     form = this.EmailForm.value;
     this.newSettings = { form } ;
     this.firebaseService.saveSettings(this.newSettings);
