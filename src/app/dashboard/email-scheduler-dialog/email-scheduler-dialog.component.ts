@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'app/services/auth.service';
 import { FirebaseService } from 'app/services/firebase.service';
 import { TranslateService } from '@ngx-translate/core';
+import { EmailLang } from './email-lang.interface';
 
 @Component({
   selector: 'ita-email-scheduler-dialog',
@@ -16,6 +17,7 @@ export class EmailSchedulerDialogComponent implements OnInit {
   public data: any;
   public description: string;
   public EmailForm: FormGroup;
+  public langs: EmailLang[];
   public name: string;
   public newSettings: Object;
   public option: string;
@@ -29,7 +31,10 @@ export class EmailSchedulerDialogComponent implements OnInit {
     firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
   }
   public ngOnInit() {
-
+    this.langs = [
+      {value: 'lang-0', viewValue: 'Українська'},
+      {value: 'lang-1', viewValue: 'English'}
+    ];
     this.EmailForm = this.formBuilder.group({
       name: ['', [Validators.pattern, Validators.required]],
       description: ['', Validators.pattern],
