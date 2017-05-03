@@ -1,4 +1,4 @@
-<form class="settings-form" #email_shedulerForm="ngForm" (ngSubmit)="onSubmit(email_shedulerForm.value)">
+<form class="settings-form" [formGroup]="EmailForm" novalidate (ngSubmit)="onSubmit($event)">
   <div class="settings-form__close-button" md-dialog-actions>
     <button md-dialog-close class="close" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i>
 </button>
@@ -9,31 +9,41 @@
       <label for="name">{{'Settings.Scheduler_Name'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Name" name="name" ngModel="{{data?.form.name}}">
+      <input mdInput placeholder="Some Name" formControlName="name"  pattern="^[A-Za-z0-9]*$">
     </md-input-container>
+  </div>
+  <div ngxErrors="name" #name="ngxErrors">
+    <div class="alert alert-danger" ngxError="pattern" >
+      {{'Errors.Error_valid_name'|translate}}
+    </div>
+  </div>
+    <div ngxErrors="name" #name="ngxErrors">
+    <div class="alert alert-danger" ngxError="required" >
+      {{'Errors.Error_required_name'|translate}}
+    </div>
   </div>
   <div class="settings-form__columns">
     <div class="settings-form__labelbox">
       <label for="description">{{'Settings.Description'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Description" name="description" ngModel="{{data?.form.description}}">
+      <input mdInput placeholder="Some Description" formControlName="description"  >
     </md-input-container>
   </div>
   <div class="row settings-form__radio-group">
     <div class="col-sm-3">{{'Settings.Options'|translate}}:</div>
     <div class="col-sm-8">
-      <md-radio-group ngModel="{{data?.form.option}}" name="option">
-        <md-radio-button value="save">
-        {{'Settings.Save_and_email'|translate}}
+      <md-radio-group formControlName="option" value="">
+        <md-radio-button value="save" ngDefaultControl>
+          {{'Settings.Save_and_email'|translate}}
         </md-radio-button>
-        <md-radio-button value="only_email">
-        {{'Settings.Only_email'|translate}}
+        <md-radio-button value="only_email" ngDefaultControl>
+          {{'Settings.Only_email'|translate}}
         </md-radio-button>
       </md-radio-group>
     </div>
   </div>
   <div class="settings-form__button">
-    <button md-raised-button type="submit">{{'Settings.Save'|translate}}</button>
+    <button class="btn btn-success" type="submit" [disabled]="EmailForm.invalid">{{'Settings.Save'|translate}} </button>
   </div>
 </form>

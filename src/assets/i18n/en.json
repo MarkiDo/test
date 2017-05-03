@@ -11,13 +11,12 @@
     "TSE": "Time Settings",
     "LNG": "Language",
     "SOT": "Sign Out"
-    
   },
-  "Settings":{
+  "Settings": {
     "Email_Scheduler": "Email Scheduler",
     "Servers_Configurator": "Servers Configurator",
     "Scheduler_Name": "Scheduler Name",
-    "Description":" Description",
+    "Description": " Description",
     "Options": "Options",
     "Save_and_email": "Save and Email to Recipients",
     "Only_email": "Only Email to Recipients",
@@ -40,5 +39,9 @@
     "usrpassLabel": "Password",
     "ErrNameREGEX": "Only A-z and 0-9 is required.",
     "ErrPassREGEX": "You should type at least: 1 number, 1 lowercase letter, 1 uppercase letter, at least 1 special character. "
+  },
+  "Errors": {
+    "Error_valid_name": "Please enter valid name: only A-Z symbols and numbers are allowed.",
+    "Error_required_name": "Please enter name"
   }
 }
