@@ -13,6 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class EmailSchedulerDialogComponent implements OnInit {
 @Input() public modal: string;
 public description: string;
+public date: Object;
 public EmailForm: FormGroup;
 public option: string;
 public name: string;
@@ -29,7 +30,8 @@ constructor(private translate: TranslateService,
     this.EmailForm = this.formBuilder.group( {
     name: ['', Validators.required],
     description: ['', Validators.required],
-    option: ['', Validators.required]
+    option: ['', Validators.required],
+    date: ['', Validators.required]
   } );
   }
 

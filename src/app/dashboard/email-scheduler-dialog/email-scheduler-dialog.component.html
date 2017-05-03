@@ -43,6 +43,17 @@
       </md-radio-group>
     </div>
   </div>
+  <div class="input-group">
+      <input formControlName="date" ngbDatepicker #d="ngbDatepicker">
+      <div class="input-group-addon" (click)="d.toggle()" >
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+      </div>
+    </div>
+  <div ngxErrors="date" #date="ngxErrors">
+    <div class="alert alert-danger" ngxError="required">
+    {{ 'Settings.EmptyDatepicker' | translate }}
+    </div>
+  </div>
   <div class="settings-form__button">
     <button class="btn btn-success" type="submit" [disabled]="EmailForm.invalid">{{'Settings.Save'|translate}} </button>
   </div>
