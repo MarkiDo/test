@@ -61,7 +61,7 @@
     <div class="settings-form__labelbox">
       <label for="name">{{'Settings.Email_Language'|translate}}</label>
     </div>
-    <md-select class="settings-form">
+    <md-select class="settings-form" formControlName="langs">
       <md-option *ngFor="let lang of langs" [value]="lang.value">{{ lang.viewValue }}</md-option>
     </md-select>
   </div>

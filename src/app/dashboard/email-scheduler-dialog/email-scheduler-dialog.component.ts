@@ -14,19 +14,16 @@ import { EmailSchedulerSettings } from './email-scheduler-settings.model';
 
 export class EmailSchedulerDialogComponent implements OnInit {
   @Input() public modal: string;
-  public data: any;
   public dateId: any;
   public date: Object;
   public description: string;
   public EmailForm: FormGroup;
+  public error: boolean;
   public langs: EmailLang[];
   public name: string;
-  public newSettings: Object;
   public option: string;
   public settings: EmailSchedulerSettings;
   public saved: boolean;
-  public error: boolean;
-  
   constructor (
     private firebaseService: FirebaseService,
     public formBuilder: FormBuilder
@@ -41,15 +38,17 @@ export class EmailSchedulerDialogComponent implements OnInit {
       { value: 'lang-1', viewValue: 'English' }
     ];
     this.EmailForm = this.formBuilder.group({
-      name: ['', [Validators.pattern, Validators.required]],
-      description: [''],
-      option: ['', Validators.required],
-      date: ['', Validators.required]
+      name: [this.settings.name, [Validators.pattern, Validators.required]],
+      description: [this.settings.description],
+      option: [this.settings.option, Validators.required],
+      date: [this.settings.date, Validators.required],
+      langs: [this.settings.langs]
     });
   }
 
-  public onSubmit(form: EmailSchedulerSettings) {
-    this.firebaseService.saveEmailSchedulerSettings(form).then((success) =>
+  public onSubmit() {
+    this.firebaseService.saveEmailSchedulerSettings(
+      new EmailSchedulerSettings(this.EmailForm.value)).then((success) =>
       this.saved = true)
       .catch((error) =>
         this.error = true);
