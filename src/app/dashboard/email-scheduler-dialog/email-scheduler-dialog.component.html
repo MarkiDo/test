@@ -9,7 +9,7 @@
       <label for="name">{{'Settings.Scheduler_Name'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Name" formControlName="name"  pattern="^[A-Za-z0-9]*$">
+      <input mdInput placeholder="{{ 'Settings.DescriptionPlaceholder' | translate }}" formControlName="name"  pattern="^[A-Za-z0-9]*$">
     </md-input-container>
   </div>
   <div ngxErrors="name" #name="ngxErrors">
@@ -17,7 +17,7 @@
       {{'Errors.Error_valid_name'|translate}}
     </div>
   </div>
-    <div ngxErrors="name" #name="ngxErrors">
+  <div ngxErrors="name" #name="ngxErrors">
     <div class="alert alert-danger" ngxError="required" >
       {{'Errors.Error_required_name'|translate}}
     </div>
@@ -27,8 +27,13 @@
       <label for="description">{{'Settings.Description'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Some Description" formControlName="description"  >
+      <textarea mdInput placeholder="{{ 'Settings.DescriptionPlaceholder' | translate }}" formControlName="description" value="" pattern="^[A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ'0-9\n\s,.?!:]+$"></textarea>
     </md-input-container>
+  </div>
+  <div ngxErrors="description" #description="ngxErrors">
+    <div class="alert alert-danger" ngxError="pattern" >
+      {{'Errors.Error_valid_name' | translate}}
+    </div>
   </div>
   <div class="row settings-form__radio-group">
     <div class="col-sm-3">{{'Settings.Options'|translate}}:</div>
