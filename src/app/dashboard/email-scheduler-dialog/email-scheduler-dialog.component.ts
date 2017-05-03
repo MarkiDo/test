@@ -12,9 +12,10 @@ import { EmailLang } from './email-lang.interface';
 })
 
 export class EmailSchedulerDialogComponent implements OnInit {
-
   @Input() public modal: string;
   public data: any;
+  public dateId: any;
+  public date: Object;
   public description: string;
   public EmailForm: FormGroup;
   public langs: EmailLang[];
@@ -22,7 +23,7 @@ export class EmailSchedulerDialogComponent implements OnInit {
   public newSettings: Object;
   public option: string;
 
-  constructor(
+  constructor (
     private translate: TranslateService,
     private auth: AuthService,
     private firebaseService: FirebaseService,
@@ -37,10 +38,10 @@ export class EmailSchedulerDialogComponent implements OnInit {
     ];
     this.EmailForm = this.formBuilder.group({
       name: ['', [Validators.pattern, Validators.required]],
-      description: ['', Validators.pattern],
-      option: ['', Validators.required]
+      description: [''],
+      option: ['', Validators.required],
+      date: ['', Validators.required]
     });
-
   }
 
   public onSubmit() {
