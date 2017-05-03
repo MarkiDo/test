@@ -20,7 +20,7 @@
       <textarea mdInput placeholder="{{ 'Settings.DescriptionPlaceholder' | translate }}" formControlName="description" value="" [ngModel]=data?.form.description pattern="^[A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ'0-9\n\s,.?!:]+$"></textarea>
     </md-input-container>
   </div>
-  <div class="alert alert-danger" *ngIf="EmailForm.get('description').invalid">
+  <div class="alert alert-danger" *ngIf="EmailForm.get('description').hasError('pattern')">
     <p>{{ 'Settings.ErrorValidationDescription' | translate }}</p>
   </div>
   <div class="settings-form__button">
