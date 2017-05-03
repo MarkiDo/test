@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'app/services/auth.service';
 import { FirebaseService } from 'app/services/firebase.service';
 import { TranslateService } from '@ngx-translate/core';
+import { EmailLang } from './email-lang.interface';
 
 @Component({
   selector: 'ita-email-scheduler-dialog',
@@ -11,16 +12,18 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class EmailSchedulerDialogComponent implements OnInit {
-@Input() public modal: string;
-public description: string;
-public date: Object;
-public EmailForm: FormGroup;
-public option: string;
-public name: string;
-public newSettings: Object;
-public data: any;
+  @Input() public modal: string;
+  public data: any;
+  public dateId: any;
+  public date: Object;
+  public description: string;
+  public EmailForm: FormGroup;
+  public langs: EmailLang[];
+  public name: string;
+  public newSettings: Object;
+  public option: string;
 
-  constructor(
+  constructor (
     private translate: TranslateService,
     private auth: AuthService,
     private firebaseService: FirebaseService,
@@ -29,13 +32,16 @@ public data: any;
     firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
   }
   public ngOnInit() {
-    this.EmailForm = this.formBuilder.group( {
-    name: ['', [ Validators.pattern, Validators.required]],
-    description: [''],
-    option: ['', Validators.required],
-    date: ['', Validators.required]
-
-  } );
+    this.langs = [
+      { value: 'lang-0', viewValue: 'Українська' },
+      { value: 'lang-1', viewValue: 'English' }
+    ];
+    this.EmailForm = this.formBuilder.group({
+      name: ['', [Validators.pattern, Validators.required]],
+      description: [''],
+      option: ['', Validators.required],
+      date: ['', Validators.required]
+    });
   }
 
   public onSubmit() {

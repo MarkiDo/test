@@ -9,16 +9,16 @@
       <label for="name">{{'Settings.Scheduler_Name'|translate}}:</label>
     </div>
     <md-input-container>
-      <input mdInput placeholder="{{ 'Settings.DescriptionPlaceholder' | translate }}" formControlName="name"  pattern="^[A-Za-z0-9]*$">
+      <input mdInput placeholder="{{'Settings.Scheduler_Name'|translate}}" formControlName="name" pattern="^[A-Za-z0-9]*$">
     </md-input-container>
   </div>
   <div ngxErrors="name" #name="ngxErrors">
-    <div class="alert alert-danger" ngxError="pattern" >
+    <div class="alert alert-danger" ngxError="pattern">
       {{'Errors.Error_valid_name'|translate}}
     </div>
   </div>
   <div ngxErrors="name" #name="ngxErrors">
-    <div class="alert alert-danger" ngxError="required" >
+    <div class="alert alert-danger" ngxError="required">
       {{'Errors.Error_required_name'|translate}}
     </div>
   </div>
@@ -27,11 +27,12 @@
       <label for="description">{{'Settings.Description'|translate}}:</label>
     </div>
     <md-input-container>
-      <textarea mdInput placeholder="{{ 'Settings.DescriptionPlaceholder' | translate }}" formControlName="description" value="" pattern="^[A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ'0-9\n\s,.?!:]+$"></textarea>
+      <textarea mdInput placeholder="{{ 'Settings.DescriptionPlaceholder' | translate }}" formControlName="description" value=""
+        pattern="^[A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ'0-9\n\s,.?!:]+$"></textarea>
     </md-input-container>
   </div>
   <div ngxErrors="description" #description="ngxErrors">
-    <div class="alert alert-danger" ngxError="pattern" >
+    <div class="alert alert-danger" ngxError="pattern">
       {{'Errors.Error_valid_name' | translate}}
     </div>
   </div>
@@ -48,15 +49,27 @@
       </md-radio-group>
     </div>
   </div>
-  <div class="input-group">
-      <input formControlName="date" ngbDatepicker #d="ngbDatepicker">
-      <div class="input-group-addon" (click)="d.toggle()" >
+  <div class="settings-form__columns">
+    <div class="settings-form__labelbox">
+      <label for="name">{{'Settings.Email_Language'|translate}}</label>
+    </div>
+    <md-select class="settings-form">
+      <md-option *ngFor="let lang of langs" [value]="lang.value">{{ lang.viewValue }}</md-option>
+    </md-select>
+  </div>
+  <div class="settings-form__columns">
+    <div class="input-group">
+      <input formControlName="date" ngbDatepicker #dateId="ngbDatepicker">
+      <div class="input-group-addon" (click)="dateId.toggle()">
         <i class="fa fa-calendar" aria-hidden="true"></i>
       </div>
     </div>
-  <div ngxErrors="date" #date="ngxErrors">
-    <div class="alert alert-danger" ngxError="required">
-    {{ 'Settings.EmptyDatepicker' | translate }}
+  </div>
+  <div class="settings-form__columns">
+    <div ngxErrors="date" #date="ngxErrors">
+      <div class="alert alert-danger" ngxError="required">
+        {{ 'Settings.EmptyDatepicker' | translate }}
+      </div>
     </div>
   </div>
   <div class="settings-form__button">
