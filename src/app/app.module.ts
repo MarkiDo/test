@@ -78,7 +78,6 @@ export function HttpLoaderFactory(http: Http) {
     FirebaseService,
     TranslateService,
     EmailSchedulerDialogComponent,
-    ServersConfiguratorDialogComponent,
     AuthProvider,
     LDAPComponent,
     { provide: LDAP_CONFIG, useValue: LDAP_CONFIG_CONST }
