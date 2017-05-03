@@ -29,6 +29,7 @@ import {
 import {
   LDAPComponent
 } from './dashboard/ldap/ldap.component';
+import { LDAP_CONFIG, LDAP_CONST } from './dashboard/ldap/ldap.constants';
 import { TranslateService } from '@ngx-translate/core';
 
 export function HttpLoaderFactory(http: Http) {
@@ -73,7 +74,8 @@ export function HttpLoaderFactory(http: Http) {
     FirebaseService,
     TranslateService,
     EmailSchedulerDialogComponent,
-    LDAPComponent
+    LDAPComponent,
+    { provide: LDAP_CONFIG, useValue: LDAP_CONST }
     ],
   entryComponents: [
     EmailSchedulerDialogComponent,

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { FirebaseService } from './../../services/firebase.service';
 import { MdDialog } from '@angular/material';
+import { LdapConfig } from './ldap.interface';
+import { LDAP_CONFIG, LDAP_CONST } from './ldap.constants';
 
 @Component({
   selector: 'ita-ldap',
@@ -24,19 +26,18 @@ export class LDAPComponent implements OnInit {
   public userpass: string;
 
   constructor(
+    @Inject(LDAP_CONFIG) config: LdapConfig,
     private translate: TranslateService,
     private firebaseService: FirebaseService,
     public dialog: MdDialog) {
+    this.hostPatternLDAPName = config.REGEX_LDAP_NAME;
+    this.hostPatternName = config.REGEX_LDAP_USERNAME;
+    this.hostPatternPass = config.REGEX_LDAP_USERPASS;
+    this.hostPatternIP = config.REGEX_LDAP_IP;
     firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
   }
   public ngOnInit() {
     this.hostValidResult = false;
-    this.hostPatternLDAPName = '[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)*';
-    this.hostPatternName = '[a-zA-Z0-9]+';
-    this.hostPatternPass = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$';
-    this.hostPatternIP = `^(([0-9]|[1-9][0-9]|1
-      [0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]
-      |[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$`;
     this.radioValues = [
       { name: 'anonymouse', translate: 'LDAP.ANON', value: false },
       { name: 'pass', translate: 'LDAP.PSW', value: true }
@@ -44,7 +45,6 @@ export class LDAPComponent implements OnInit {
   }
 
   public onSubmit(form: any): void {
-    console.log(form);
     this.data = { form };
     this.firebaseService.saveSettings(this.data);
   }
