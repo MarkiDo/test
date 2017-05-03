@@ -4,6 +4,7 @@ import { FirebaseService } from './../../services/firebase.service';
 import { MdDialog } from '@angular/material';
 import { LdapConfig } from './ldap.interface';
 import { LDAP_CONFIG, LDAP_CONST } from './ldap.constants';
+import { RadioValues } from './radio-values';
 
 @Component({
   selector: 'ita-ldap',
@@ -13,7 +14,7 @@ import { LDAP_CONFIG, LDAP_CONST } from './ldap.constants';
 })
 export class LDAPComponent implements OnInit {
   public radioState: boolean;
-  public radioValues: any[];
+  public radioValues: RadioValues[];
   public hostValidResult: boolean;
   public hostPatternIP: string;
   public hostPatternName: string;
