@@ -27,8 +27,8 @@ constructor(private translate: TranslateService,
             }
   public ngOnInit() {
     this.EmailForm = this.formBuilder.group( {
-    name: ['', Validators.required],
-    description: ['', Validators.required],
+    name: ['', [ Validators.pattern, Validators.required]],
+    description: [''],
     option: ['', Validators.required]
   } );
   }
