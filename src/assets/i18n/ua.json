@@ -21,7 +21,12 @@
     "Save_and_email": "Зберегти та надіслати одержувачам",
     "Only_email": "Лише надіслати одержувачам",
     "Save": "Зберегти",
-    "Email_Language": "Мова листування:"
+<<<<<<< src/assets/i18n/ua.json
+    "Email_Language": "Мова листування:",
+    "DescriptionPlaceholder": "Введіть опис"
+=======
+    "DescriptionPlaceholder": "Введіть опис"
+>>>>>>> src/assets/i18n/ua.json
   },
   "LDAP": {
     "TTL": "Налаштування LDAP",

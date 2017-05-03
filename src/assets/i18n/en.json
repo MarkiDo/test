@@ -21,7 +21,12 @@
     "Save_and_email": "Save and Email to Recipients",
     "Only_email": "Only Email to Recipients",
     "Save": "Save",
-    "Email_Language": "Email Language:"
+<<<<<<< src/assets/i18n/en.json
+    "Email_Language": "Email Language:",
+    "DescriptionPlaceholder": "Some description"
+=======
+    "DescriptionPlaceholder": "Some description"
+>>>>>>> src/assets/i18n/en.json
   },
   "LDAP": {
     "TTL": "LDAP Configuration",
