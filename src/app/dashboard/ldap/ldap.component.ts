@@ -3,14 +3,14 @@ import { TranslateService } from '@ngx-translate/core';
 import { FirebaseService } from './../../services/firebase.service';
 import { MdDialog } from '@angular/material';
 import { LdapConfig } from './ldap.interface';
-import { LDAP_CONFIG, LDAP_CONST } from './ldap.constants';
+import { LDAP_CONFIG, LDAP_CONFIG_CONST } from './ldap.constants';
 import { RadioValues } from './radio-values';
 
 @Component({
   selector: 'ita-ldap',
   templateUrl: './ldap.component.html',
   styleUrls: ['./ldap.component.scss'],
-  providers: [{ provide: LDAP_CONFIG, useValue: LDAP_CONST }]
+  providers: [{ provide: LDAP_CONFIG, useValue: LDAP_CONFIG_CONST }]
 })
 export class LDAPComponent implements OnInit {
   public radioState: boolean;

@@ -30,7 +30,7 @@ import {
 import {
   LDAPComponent
 } from './dashboard/ldap/ldap.component';
-import { LDAP_CONFIG, LDAP_CONST } from './dashboard/ldap/ldap.constants';
+import { LDAP_CONFIG, LDAP_CONFIG_CONST } from './dashboard/ldap/ldap.constants';
 import { TranslateService } from '@ngx-translate/core';
 
 export function HttpLoaderFactory(http: Http) {
@@ -77,7 +77,7 @@ export function HttpLoaderFactory(http: Http) {
     TranslateService,
     EmailSchedulerDialogComponent,
     LDAPComponent,
-    { provide: LDAP_CONFIG, useValue: LDAP_CONST }
+    { provide: LDAP_CONFIG, useValue: LDAP_CONFIG_CONST }
     ],
   entryComponents: [
     EmailSchedulerDialogComponent,

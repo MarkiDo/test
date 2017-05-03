@@ -3,7 +3,7 @@ import { LdapConfig } from './ldap.interface';
 
 export const LDAP_CONFIG = new InjectionToken<LdapConfig>('ldap.interface');
 
-export const LDAP_CONST: LdapConfig = {
+export const LDAP_CONFIG_CONST: LdapConfig = {
   REGEX_LDAP_NAME: '[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)*',
   REGEX_LDAP_USERNAME: '[a-zA-Z0-9]+',
   REGEX_LDAP_USERPASS: '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$',
