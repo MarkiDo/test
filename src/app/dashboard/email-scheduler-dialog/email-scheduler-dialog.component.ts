@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './email-scheduler-dialog.component.html',
   styleUrls: ['./email-scheduler-dialog.component.scss'],
 })
-export interface SettingDate{
+export interface SettingsDate{
   day: number;
   month: number;
   year: number;
@@ -18,7 +18,7 @@ export interface SettingDate{
 export class EmailSchedulerDialogComponent implements OnInit {
 @Input() public modal: string;
 public description: string;
-public date: SettingDate;
+public date: SettingsDate;
 public EmailForm: FormGroup;
 public option: string;
 public name: string;
