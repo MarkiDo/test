@@ -7,7 +7,8 @@ module.exports = function (config) {
     frameworks: ['jasmine', '@angular/cli'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-phantomjs-launcher'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
       require('karma-remap-istanbul'),
       require('@angular/cli/plugins/karma')
     ],
@@ -34,16 +35,12 @@ module.exports = function (config) {
     },
     reporters: config.angularCli && config.angularCli.codeCoverage
               ? ['progress', 'karma-remap-istanbul']
-              : ['progress'],
-hostname : process.env.IP,
-port : process.env.PORT,
-runnerPort : 0,
-    // port: 9876,
-    // colors: true,
-    // logLevel: config.LOG_INFO,
-    // autoWatch: true,
-    browsers: ['PhantomJS'],
-    // browsers: ['Chrome'],
+              : ['progress', 'kjhtml'],
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
+    autoWatch: true,
+    browsers: ['Chrome'],
     singleRun: false
   });
 };

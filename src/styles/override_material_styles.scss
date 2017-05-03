@@ -1,0 +1,47 @@
+@import '/base/_variables.scss';
+
+.cdk-overlay-container{
+  // radio
+  .mat-radio-inner-circle { 
+    background-color: $matRadioCircle;
+  }
+  .mat-radio-checked {
+    .mat-radio-outer-circle {
+      border-color: $matRadioCircle;
+    }
+  }
+  .mat-radio-ripple {
+    .mat-ripple-element {   
+      background-color: rgba( $matRadioCircle, 0.26 );
+    }
+  }
+  .mat-radio-label-content {
+    font-size: 0.9rem;
+  }
+  // checkbox
+  .mat-checkbox-checked{
+    .mat-checkbox-background { 
+      background-color: $matRadioCircle;
+    } 
+  } 
+  // menu  
+  .mat-menu-content {
+    padding: 0;
+  }
+  // dialog borders
+  .mat-dialog-container {
+    border: 0.125rem solid $matDialogContainer;
+    border-radius: 0.3125rem;
+    // buttons
+    .mat-raised-button{
+      color: $matRaisedButtonText;
+      text-transform: uppercase;
+      background-color: $matRaisedButton; 
+      font-weight: bold; 
+      box-shadow: none;
+    }
+    .mat-raised-button:hover{  
+      box-shadow: 0.0625rem 0.0625rem 0.125rem darken( $matRaisedButton, 50% );
+    }
+  }
+}
