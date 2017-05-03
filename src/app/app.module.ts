@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, Http } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
+import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from './app.routing';
 import 'hammerjs';
@@ -24,10 +25,13 @@ import { FIREBASE_CONFIG } from './services/firebase.config';
 import { AngularFireModule } from 'angularfire2';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { EmailSchedulerDialogComponent }
-  from './dashboard/email-scheduler-dialog/email-scheduler-dialog.component';
-import { ServersConfiguratorDialogComponent }
-  from './dashboard/servers-configurator-dialog/servers-configurator-dialog.component';
+import {
+  EmailSchedulerDialogComponent
+} from './dashboard/email-scheduler-dialog/email-scheduler-dialog.component';
+import {
+  LDAPComponent
+} from './dashboard/ldap/ldap.component';
+import { LDAP_CONFIG, LDAP_CONFIG_CONST } from './dashboard/ldap/ldap.constants';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthProvider } from './services/auth0.config';
 
@@ -47,12 +51,13 @@ export function HttpLoaderFactory(http: Http) {
     ItaUserTimeSettingsComponent,
     ItaUserLanguageComponent,
     EmailSchedulerDialogComponent,
-    ServersConfiguratorDialogComponent,
+    LDAPComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    NgxErrorsModule,
     routing,
     ReactiveFormsModule,
     JsonpModule,
@@ -74,12 +79,14 @@ export function HttpLoaderFactory(http: Http) {
     TranslateService,
     EmailSchedulerDialogComponent,
     ServersConfiguratorDialogComponent,
-    AuthProvider
+    AuthProvider,
+    LDAPComponent,
+    { provide: LDAP_CONFIG, useValue: LDAP_CONFIG_CONST }
     ],
   entryComponents: [
     EmailSchedulerDialogComponent,
-    ServersConfiguratorDialogComponent
+    LDAPComponent
   ],
   bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}

@@ -11,19 +11,42 @@
     "TSE": "Time Settings",
     "LNG": "Language",
     "SOT": "Sign Out"
-    
   },
-  "Settings":{
+  "Settings": {
     "Email_Scheduler": "Email Scheduler",
     "Servers_Configurator": "Servers Configurator",
     "Scheduler_Name": "Scheduler Name",
-    "Description":" Description",
+    "Description": " Description",
     "Options": "Options",
     "Save_and_email": "Save and Email to Recipients",
     "Only_email": "Only Email to Recipients",
     "Save": "Save",
     "Settings_saved": "Settings saved successfully!",
-    "Save_error": "Error during settings save, try again later."
+    "Save_error": "Error during settings save, try again later.",
+    "Email_Language": "Email Language:",
+    "EmptyDatepicker": "Please enter the date",
+    "DescriptionPlaceholder": "Some description"
+  },
+  "LDAP": {
+    "TTL": "LDAP Configuration",
+    "AUTTL": "Auth Method",
+    "ANON": "Anonymous",
+    "PSW": "Use Password",
+    "NAME": "LDAP Name",
+    "HOST": "Host(s)",
+    "ERReqField": "Field is required. ",
+    "ErrLDAPNameRule": "Only A-z and 0-9 is required. Also you may type several words. ",
+    "minL4": "Minimal length is 4 symbols. ",
+    "minL8": "Minimal length is 8 symbols. ",
+    "maxL16": "Max length is 16 symbols. ",
+    "hostReqFAQ": "The address must be a hostname or an IP. The IP address must be 4 numbers separated by a period. Each number must be a value from 0 to 255.( Example: 178.210.192.2 ). Also you can type a host name (Example: my.host.net ) or type IP and host separated by comma. ",
+    "usrnameLabel": "Login",
+    "usrpassLabel": "Password",
+    "ErrNameREGEX": "Only A-z and 0-9 is required.",
+    "ErrPassREGEX": "You should type at least: 1 number, 1 lowercase letter, 1 uppercase letter, at least 1 special character. "
+  },
+  "Errors": {
+    "Error_valid_name": "Please enter valid name: only A-Z symbols and numbers are allowed.",
+    "Error_required_name": "Please enter name"
   }
-
 }
