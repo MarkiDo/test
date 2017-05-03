@@ -21,6 +21,7 @@
     "Save_and_email": "Save and Email to Recipients",
     "Only_email": "Only Email to Recipients",
     "Save": "Save",
+    "EmptyDatepicker": "Please enter the date",
     "DescriptionPlaceholder": "Some description"
   },
   "LDAP": {

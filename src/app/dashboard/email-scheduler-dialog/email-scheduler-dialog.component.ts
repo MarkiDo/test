@@ -11,14 +11,14 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class EmailSchedulerDialogComponent implements OnInit {
-
-  @Input() public modal: string;
-  public data: any;
-  public description: string;
-  public EmailForm: FormGroup;
-  public name: string;
-  public newSettings: Object;
-  public option: string;
+@Input() public modal: string;
+public description: string;
+public date: Object;
+public EmailForm: FormGroup;
+public option: string;
+public name: string;
+public newSettings: Object;
+public data: any;
 
   constructor(
     private translate: TranslateService,
@@ -29,13 +29,13 @@ export class EmailSchedulerDialogComponent implements OnInit {
     firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
   }
   public ngOnInit() {
+    this.EmailForm = this.formBuilder.group( {
+    name: ['', [ Validators.pattern, Validators.required]],
+    description: [''],
+    option: ['', Validators.required],
+    date: ['', Validators.required]
 
-    this.EmailForm = this.formBuilder.group({
-      name: ['', [Validators.pattern, Validators.required]],
-      description: ['', Validators.pattern],
-      option: ['', Validators.required]
-    });
-
+  } );
   }
 
   public onSubmit() {

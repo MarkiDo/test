@@ -21,6 +21,7 @@
     "Save_and_email": "Зберегти та надіслати одержувачам",
     "Only_email": "Лише надіслати одержувачам",
     "Save": "Зберегти",
+    "EmptyDatepicker": "Прошу ввести дату",
     "DescriptionPlaceholder": "Введіть опис"
   },
   "LDAP": {
