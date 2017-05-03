@@ -24,10 +24,13 @@ import { FirebaseService, firebaseConfig } from './services/firebase.service';
 import { AngularFireModule } from 'angularfire2';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { EmailSchedulerDialogComponent }
-  from './dashboard/email-scheduler-dialog/email-scheduler-dialog.component';
-import { ServersConfiguratorDialogComponent }
-  from './dashboard/servers-configurator-dialog/servers-configurator-dialog.component';
+import {
+  EmailSchedulerDialogComponent
+} from './dashboard/email-scheduler-dialog/email-scheduler-dialog.component';
+import {
+  LDAPComponent
+} from './dashboard/ldap/ldap.component';
+import { LDAP_CONFIG, LDAP_CONFIG_CONST } from './dashboard/ldap/ldap.constants';
 import { TranslateService } from '@ngx-translate/core';
 
 export function HttpLoaderFactory(http: Http) {
@@ -46,7 +49,7 @@ export function HttpLoaderFactory(http: Http) {
     ItaUserTimeSettingsComponent,
     ItaUserLanguageComponent,
     EmailSchedulerDialogComponent,
-    ServersConfiguratorDialogComponent,
+    LDAPComponent
   ],
   imports: [
     BrowserModule,
@@ -73,11 +76,13 @@ export function HttpLoaderFactory(http: Http) {
     FirebaseService,
     TranslateService,
     EmailSchedulerDialogComponent,
-    ServersConfiguratorDialogComponent],
+    LDAPComponent,
+    { provide: LDAP_CONFIG, useValue: LDAP_CONFIG_CONST }
+    ],
   entryComponents: [
     EmailSchedulerDialogComponent,
-    ServersConfiguratorDialogComponent
+    LDAPComponent
   ],
   bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}
