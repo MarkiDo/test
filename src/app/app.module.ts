@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, Http } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
-import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from './app.routing';
 import 'hammerjs';
@@ -56,7 +55,6 @@ export function HttpLoaderFactory(http: Http) {
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgxErrorsModule,
     routing,
     ReactiveFormsModule,
     JsonpModule,
