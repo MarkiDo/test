@@ -32,8 +32,8 @@ export class EmailSchedulerDialogComponent implements OnInit {
   }
   public ngOnInit() {
     this.langs = [
-      {value: 'lang-0', viewValue: 'Українська'},
-      {value: 'lang-1', viewValue: 'English'}
+      { value: 'lang-0', viewValue: 'Українська' },
+      { value: 'lang-1', viewValue: 'English' }
     ];
     this.EmailForm = this.formBuilder.group({
       name: ['', [Validators.pattern, Validators.required]],
