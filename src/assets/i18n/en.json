@@ -23,8 +23,8 @@
     "Only_email": "Only Email to Recipients",
     "Save": "Save"
   },
-  "Errors":{
+    "Errors":{
     "Error_valid_name": "Please enter valid name: only A-Z symbols and numbers are allowed.",
+    "Error_required_name": "Please enter name"
   }
-
 }

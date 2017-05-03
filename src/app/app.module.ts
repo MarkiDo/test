@@ -1,14 +1,16 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, Http } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
+import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from './app.routing';
 import 'hammerjs';
 import {  } from 'jasmine';
 import { AppComponent } from './app.component';
+import { APP_CONFIG, DIALOG_CONFIG  } from './app-config';
 import { HeaderComponent } from './commons/header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdministrationComponent } from './administration/administration.component';
@@ -54,9 +56,8 @@ export function HttpLoaderFactory(http: Http) {
     BrowserModule,
     FormsModule,
     HttpModule,
+    NgxErrorsModule,
     routing,
-    FormBuilder,
-    Validators, 
     ReactiveFormsModule,
     JsonpModule,
     NgbModule.forRoot(),
@@ -71,7 +72,7 @@ export function HttpLoaderFactory(http: Http) {
           }
         })
   ],
-  providers: [
+  providers: [{provide: APP_CONFIG, useValue: DIALOG_CONFIG },
     AuthService,
     FirebaseService,
     TranslateService,

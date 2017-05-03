@@ -7,5 +7,5 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./servers-configurator-dialog.component.scss']
 })
 export class ServersConfiguratorDialogComponent {
-  constructor(private translate: TranslateService) {}
+  constructor(public translate: TranslateService) {}
 }

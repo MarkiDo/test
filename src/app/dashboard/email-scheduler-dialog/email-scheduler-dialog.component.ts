@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'app/services/auth.service';
 import { FirebaseService } from 'app/services/firebase.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -9,29 +9,36 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './email-scheduler-dialog.component.html',
   styleUrls: ['./email-scheduler-dialog.component.scss']
 })
-export class EmailSchedulerDialogComponent {
+
+export class EmailSchedulerDialogComponent implements OnInit {
 @Input() public modal: string;
-public name: string;
 public description: string;
+public EmailForm: FormGroup;
 public option: string;
-private EmailForm = this.fb.group( {
-    name: ['', Validators.required, Validators.pattern('^[A-Za-z0-9]*$')],
-    description: ['', Validators.required],
-    option: ['']
-  } );
-private data: Object;
-private newSettings: Object;
+public name: string;
+public newSettings: Object;
+public data: any;
 
 constructor(private translate: TranslateService,
             private auth: AuthService,
             private firebaseService: FirebaseService,
-            public fb: FormBuilder){
+            public formBuilder: FormBuilder) {
             firebaseService.getSettings().subscribe((data) => { this.data = data.settings; });
             }
-
-  private onSubmit(form) {
-    form = this.EmailForm.value;
-    console.log(form)
+  public ngOnInit() {
+    this.EmailForm = this.formBuilder.group( {
+    name: ['', Validators.required],
+    description: ['', Validators.required],
+    option: ['', Validators.required]
+  } );
+    this.EmailForm.setValue( {
+    name: this.data.form.name,
+    description: this.data.form.description,
+    option: this.data.form.option,
+    });
+    }
+  public onSubmit() {
+    const form = this.EmailForm.value;
     this.newSettings = { form } ;
     this.firebaseService.saveSettings(this.newSettings);
   }
