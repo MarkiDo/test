@@ -8,14 +8,14 @@ import { LDAP_CONFIG, LDAP_CONST } from './ldap.constants';
 @Component({
   selector: 'ita-ldap',
   templateUrl: './ldap.component.html',
-  styleUrls: ['./ldap.component.scss']
+  styleUrls: ['./ldap.component.scss'],
+  providers: [{ provide: LDAP_CONFIG, useValue: LDAP_CONST }]
 })
 export class LDAPComponent implements OnInit {
-  public radioState: any;
+  public radioState: boolean;
   public radioValues: any[];
   public hostValidResult: boolean;
   public hostPatternIP: string;
-  public hostPatternDomain: string;
   public hostPatternName: string;
   public hostPatternPass: string;
   public hostPatternLDAPName: string;
