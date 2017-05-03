@@ -4,6 +4,14 @@
 </button>
   </div>
   <div class="settings-form__title">{{'Settings.Email_Scheduler'|translate}}</div>
+  <div class="settings-form__results">
+    <div [hidden]="!saved" class="alert alert-success">
+      {{'Settings.Settings_saved'|translate}}
+    </div>
+    <div [hidden]="!error" class ="alert alert-danger">
+      {{'Settings.Save_error'|translate}}
+    </div>
+  </div>
   <div class="settings-form__columns">
     <div class="settings-form__labelbox">
       <label for="name">{{'Settings.Scheduler_Name'|translate}}:</label>
@@ -33,7 +41,7 @@
   </div>
   <div ngxErrors="description" #description="ngxErrors">
     <div class="alert alert-danger" ngxError="pattern">
-      {{'Errors.Error_valid_name' | translate}}
+      {{'Errors.Error_valid_description' | translate}}
     </div>
   </div>
   <div class="row settings-form__radio-group">
@@ -53,7 +61,7 @@
     <div class="settings-form__labelbox">
       <label for="name">{{'Settings.Email_Language'|translate}}</label>
     </div>
-    <md-select class="settings-form">
+    <md-select class="settings-form" formControlName="langs">
       <md-option *ngFor="let lang of langs" [value]="lang.value">{{ lang.viewValue }}</md-option>
     </md-select>
   </div>

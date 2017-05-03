@@ -20,7 +20,8 @@ import { ItaUserTimeSettingsComponent }
   from './commons/ita-user-time-settings/ita-user-time-settings.component';
 import { ItaUserLanguageComponent } from './commons/ita-user-language/ita-user-language.component';
 import { AuthService } from './services/auth.service';
-import { FirebaseService, firebaseConfig } from './services/firebase.service';
+import { FirebaseService } from './services/firebase.service';
+import { FIREBASE_CONFIG } from './services/firebase.config';
 import { AngularFireModule } from 'angularfire2';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -32,6 +33,7 @@ import {
 } from './dashboard/ldap/ldap.component';
 import { LDAP_CONFIG, LDAP_CONFIG_CONST } from './dashboard/ldap/ldap.constants';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthProvider } from './services/auth0.config';
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http, './src/assets/i18n/', '.json');
@@ -62,7 +64,7 @@ export function HttpLoaderFactory(http: Http) {
     NgbModule.forRoot(),
     MaterialModule.forRoot(),
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
     TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -76,6 +78,7 @@ export function HttpLoaderFactory(http: Http) {
     FirebaseService,
     TranslateService,
     EmailSchedulerDialogComponent,
+    AuthProvider,
     LDAPComponent,
     { provide: LDAP_CONFIG, useValue: LDAP_CONFIG_CONST }
     ],

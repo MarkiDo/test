@@ -1,17 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
+import { AuthConfig } from './auth0.config';
+import { Router } from '@angular/router';
+
+interface AuthServiceInterface {
+  profile: Object;
+  Auth0Lock: Object;
+  lock: Object;
+};
 
 @Injectable()
-export class AuthService {
+export class AuthService implements AuthServiceInterface {
   public profile: Object;
-  private Auth0Lock = require('auth0-lock').default;
-  private lock = new this.Auth0Lock('g92ByoNQKvIcIjtJvCGps05BK6Rtw6bC', 'lv-232.eu.auth0.com', {
-    closable: false,
-    auth: {
-      redirect: false,
-    }
-  });
-  constructor() {
+  public Auth0Lock = require('auth0-lock').default;
+  public lock;
+  constructor(private router: Router, @Inject(AuthConfig) config) {
+    this.lock = new this.Auth0Lock(config.clientID, config.domain, {
+      closable: false,
+      auth: {
+        redirect: false,
+      }
+    });
     this.profile = JSON.parse(localStorage.getItem('profile'));
     this.lock.on('authenticated', (authResult) => {
       localStorage.setItem('id_token', authResult.idToken);
@@ -19,9 +28,10 @@ export class AuthService {
         if (!error) {
           localStorage.setItem('profile', JSON.stringify(profile));
           this.profile = profile;
+          this.lock.hide();
+          router.navigate(['/dashboard']);
         }
       });
-      this.lock.hide();
     });
   }
 
