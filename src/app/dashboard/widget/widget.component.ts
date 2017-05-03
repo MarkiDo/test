@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { DashboardComponent } from '../../dashboard/dashboard.component';
+import { Component, Input, OnInit, Inject  } from '@angular/core';
+import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { MdDialog } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
+import { DIALOG, DialogConfig, DIALOG_CONFIG } from 'app/dialog-config';
 
 import {
   EmailSchedulerDialogComponent
@@ -12,25 +13,28 @@ import {
 @Component({
   selector: 'ita-widget',
   templateUrl: './widget.component.html',
-  styleUrls: ['./widget.component.scss']
+  styleUrls: ['./widget.component.scss'],
+  providers: [{provide: DIALOG, useValue: DIALOG_CONFIG }]
 })
 export class WidgetComponent implements OnInit {
   @Input() public modal: string;
   @Input() public title: string;
   @Input() public status: string;
   @Input() public data: string;
+  public width: string;
+  public height: string;
   public type: string;
   public openModal: any;
-  public height350: string;
-  public width550: string;
-  constructor(public dialog: MdDialog,
-              private translate: TranslateService,
-              public email: EmailSchedulerDialogComponent,
-              public server: ServersConfiguratorDialogComponent ) { }
+    constructor(@Inject(DIALOG)  config: DialogConfig ,
+                public dialog: MdDialog,
+                private translate: TranslateService,
+                public email: EmailSchedulerDialogComponent,
+                public server: ServersConfiguratorDialogComponent ) {
+                this.width = config.width;
+                this.height = config.height;
+                }
   public ngOnInit() {
-      this.height350 = '350px';
-      this.width550 = '550px';
-      this.type = 'constructor';
+     this.type = 'constructor';
     }
   public openDialog() {
     if (this.modal === this.email[this.type].name) {
@@ -40,8 +44,8 @@ export class WidgetComponent implements OnInit {
       this.openModal = this.server[this.type];
     }
     this.dialog.open(this.openModal, {
-      height: this.height350,
-      width: this.width550
+      height: this.height,
+      width: this.width
     });
   };
 }

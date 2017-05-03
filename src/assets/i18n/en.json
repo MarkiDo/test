@@ -1,7 +1,7 @@
 {
   "HOME": {
     "CFG": "Service Configuration",
-    "ADM": "Administration",
+    "ADM": "Adminisration",
     "ESC": "Email Scheduler",
     "STA": "Status: On",
     "STO": "Status: Off",
@@ -22,9 +22,10 @@
     "Save_and_email": "Save and Email to Recipients",
     "Only_email": "Only Email to Recipients",
     "Save": "Save",
-    "ErrorValidationDescription": 
-    "Please enter valid description: A-Z symbols, numbers and following symbols “,”, “.”, “?”, “!”, “:” are allowed.",
     "DescriptionPlaceholder": "Some description"
+  },
+    "Errors":{
+    "Error_valid_name": "Please enter valid name: only A-Z symbols and numbers are allowed.",
+    "Error_required_name": "Please enter name"
   }
-
 }
