@@ -1,7 +1,7 @@
 <md-toolbar class="ita-md-toolbar">
   <div *ngIf="auth.authenticated() && auth.profile">
   <button md-button [md-menu-trigger-for]="menu">
-  {{auth.profile.email}} <i class="align-middle fa fa-user-circle fa-2x"></i>
+  {{auth?.profile?.email}} <i class="align-middle fa fa-user-circle fa-2x"></i>
   </button>
   <md-menu #menu="mdMenu" x-position="before" y-position="below" [overlapTrigger]="false">
     <button md-menu-item [routerLink]="['/UserTimeSettings']">{{ 'HOME.TSE' | translate }}</button>

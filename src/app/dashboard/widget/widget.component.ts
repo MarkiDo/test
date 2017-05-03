@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Inject  } from '@angular/core';
+import { Component, Input, OnInit, Inject } from '@angular/core';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { MdDialog } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
@@ -8,13 +8,13 @@ import {
   EmailSchedulerDialogComponent
 } from '../email-scheduler-dialog/email-scheduler-dialog.component';
 import {
-  ServersConfiguratorDialogComponent
-} from '../servers-configurator-dialog/servers-configurator-dialog.component';
+  LDAPComponent
+} from '../ldap/ldap.component';
 @Component({
   selector: 'ita-widget',
   templateUrl: './widget.component.html',
   styleUrls: ['./widget.component.scss'],
-  providers: [{provide: DIALOG, useValue: DIALOG_CONFIG }]
+  providers: [{ provide: DIALOG, useValue: DIALOG_CONFIG }]
 })
 export class WidgetComponent implements OnInit {
   @Input() public modal: string;
@@ -25,17 +25,19 @@ export class WidgetComponent implements OnInit {
   public height: string;
   public type: string;
   public openModal: any;
-    constructor(@Inject(DIALOG)  config: DialogConfig ,
-                public dialog: MdDialog,
-                private translate: TranslateService,
-                public email: EmailSchedulerDialogComponent,
-                public server: ServersConfiguratorDialogComponent ) {
-                this.width = config.width;
-                this.height = config.height;
-                }
+  constructor(
+    @Inject(DIALOG) config: DialogConfig,
+    public dialog: MdDialog,
+    private translate: TranslateService,
+    public email: EmailSchedulerDialogComponent,
+    public server: LDAPComponent
+  ) {
+    this.width = config.width;
+    this.height = config.height;
+  }
   public ngOnInit() {
-     this.type = 'constructor';
-    }
+    this.type = 'constructor';
+  }
   public openDialog() {
     if (this.modal === this.email[this.type].name) {
       this.openModal = this.email[this.type];
