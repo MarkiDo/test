@@ -5,6 +5,8 @@ export interface AppConfig {
   height: string;
 }
 export const DIALOG_CONFIG: AppConfig = {
- width : '550px',
+ width : '600px',
  height : 'auto'
 };
+
+

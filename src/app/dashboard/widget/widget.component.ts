@@ -13,7 +13,8 @@ import {
 @Component({
   selector: 'ita-widget',
   templateUrl: './widget.component.html',
-  styleUrls: ['./widget.component.scss']
+  styleUrls: ['./widget.component.scss'],
+  providers: [{provide: APP_CONFIG, useValue: DIALOG_CONFIG }]
 })
 export class WidgetComponent implements OnInit {
   @Input() public modal: string;
