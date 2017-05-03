@@ -22,9 +22,9 @@ export class EmailSchedulerDialogComponent implements OnInit {
   public langs: EmailLang[];
   public name: string;
   public option: string;
-  public settings: EmailSchedulerSettings;
+  public settings = new EmailSchedulerSettings();
   public saved: boolean;
-  constructor (
+  constructor(
     private firebaseService: FirebaseService,
     public formBuilder: FormBuilder
   ) {
@@ -45,11 +45,10 @@ export class EmailSchedulerDialogComponent implements OnInit {
       langs: [this.settings.langs]
     });
   }
-
   public onSubmit() {
     this.firebaseService.saveEmailSchedulerSettings(
       new EmailSchedulerSettings(this.EmailForm.value)).then((success) =>
-      this.saved = true)
+        this.saved = true)
       .catch((error) =>
         this.error = true);
   }

@@ -47,6 +47,7 @@
   },
   "Errors": {
     "Error_valid_name": "Please enter valid name: only A-Z symbols and numbers are allowed.",
+    "Error_valid_description": "Please enter valid description: A-Z symbols, numbers and following symbols “,”, “.”, “?”, “!”, “:” are allowed.",
     "Error_required_name": "Please enter name"
   }
 }
