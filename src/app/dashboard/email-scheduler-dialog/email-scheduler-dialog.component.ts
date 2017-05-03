@@ -31,12 +31,8 @@ constructor(private translate: TranslateService,
     description: ['', Validators.required],
     option: ['', Validators.required]
   } );
-    this.EmailForm.setValue( {
-    name: this.data.form.name,
-    description: this.data.form.description,
-    option: this.data.form.option,
-    });
-    }
+  }
+
   public onSubmit() {
     const form = this.EmailForm.value;
     this.newSettings = { form } ;
