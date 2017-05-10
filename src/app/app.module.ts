@@ -34,7 +34,13 @@ import {
 import { LDAP_CONFIG, LDAP_CONFIG_CONST } from './dashboard/ldap/ldap.constants';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthProvider } from './services/auth0.config';
-
+import { DatepickerComponent
+} from './dashboard/email-scheduler-dialog/datepicker/datepicker.component';
+import { ReportingComponent } from './administration/reporting/reporting.component';
+import { UsersComponent } from './administration/users/users.component';
+import { FilteringComponent } from './administration/filtering/filtering.component';
+import { SidebarModule } from 'ng-sidebar';
+import { ChartsModule } from 'ng2-charts';
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http, './src/assets/i18n/', '.json');
 }
@@ -51,7 +57,11 @@ export function HttpLoaderFactory(http: Http) {
     ItaUserTimeSettingsComponent,
     ItaUserLanguageComponent,
     EmailSchedulerDialogComponent,
-    LDAPComponent
+    LDAPComponent,
+    DatepickerComponent,
+    ReportingComponent,
+    UsersComponent,
+    FilteringComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +71,8 @@ export function HttpLoaderFactory(http: Http) {
     routing,
     ReactiveFormsModule,
     JsonpModule,
+    ChartsModule,
+    SidebarModule.forRoot(),
     NgbModule.forRoot(),
     MaterialModule.forRoot(),
     BrowserAnimationsModule,

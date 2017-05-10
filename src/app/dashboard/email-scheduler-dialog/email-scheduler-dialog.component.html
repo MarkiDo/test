@@ -66,19 +66,14 @@
     </md-select>
   </div>
   <div class="settings-form__columns">
-    <div class="input-group">
+      <div class="input-group">
       <input formControlName="date" ngbDatepicker #dateId="ngbDatepicker">
       <div class="input-group-addon" (click)="dateId.toggle()">
         <i class="fa fa-calendar" aria-hidden="true"></i>
       </div>
     </div>
-  </div>
-  <div class="settings-form__columns">
-    <div ngxErrors="date" #date="ngxErrors">
-      <div class="alert alert-danger" ngxError="required">
-        {{ 'Settings.EmptyDatepicker' | translate }}
-      </div>
-    </div>
+   
+
   </div>
   <div class="settings-form__button">
     <button class="btn btn-success" type="submit" [disabled]="EmailForm.invalid">{{'Settings.Save'|translate}} </button>
