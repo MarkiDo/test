@@ -14,13 +14,25 @@
   </div>
   <div class="col-md-6">
     <div style="display: block">
-    <canvas baseChart
+    <canvas baseChart width="20" height="20"
+            [data]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>
+  </div>
+ <div class="col-md-6">
+    <div style="display: block"> 
+  <canvas baseChart width="20" height="20"
           [data]="pieChartData"
           [labels]="pieChartLabels"
+          [colors]="pieChartColors"
           [chartType]="pieChartType"
           (chartHover)="chartHovered($event)"
           (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  </div>
-  
+   </div>
+   </div>       
 </div>

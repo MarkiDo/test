@@ -6,7 +6,7 @@ import { FirebaseService } from './../../services/firebase.service';
   styleUrls: ['./reporting.component.scss']
 })
 export class ReportingComponent implements OnInit {
- public lineChartData: any[];
+ public lineChartData: number[];
  public lineChartLabels: any[];
  public lineChartOptions: any = { responsive: true};
  public lineChartLegend: boolean = true;
@@ -29,9 +29,9 @@ export class ReportingComponent implements OnInit {
  constructor (private firebaseservice: FirebaseService){};
 
  public ngOnInit(){
-   this.pieChartData = [];
+   this.pieChartData = [990, 972, 964, 964, 962, 960, 947, 941, 935, 933];
    let somedata= [];
-   this.pieChartLabels= [];
+   this.pieChartLabels= ["Canada", "Brazil", "China", "Thailand", "Malaysia", "Grenada", "China", "United States", "Japan", "Hungary"];
    this.lineChartData= [];
    this.lineChartLabels= [];
    this.barChartLabels=[];
@@ -43,12 +43,12 @@ export class ReportingComponent implements OnInit {
         this.barChartLabels.push(current.website);
         this.lineChartData.push(current.traffic);
         this.lineChartLabels.push(current.email);
-        this.pieChartData.push(current.traffic);
-        this.pieChartLabels.push(current.country);
+        //this.pieChartData.push(current.traffic);
+        //this.pieChartLabels.push(current.country);
         somedata.push(current);
         
       });
-      console.log(this);
+      console.log(this.pieChartLabels);
     });
  }
 

@@ -1,8 +1,8 @@
 <md-sidenav-container>
 <button md-icon-button (click)="sidenav.toggle()">
-        <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-angle-right fa-2x " aria-hidden="true"></i>
 </button>
-<md-sidenav #sidenav mode="side">
+<md-sidenav #sidenav mode="side" class="admin-border">
   <md-nav-list>  
     <a md-list-item [routerLink]="['./users']"> Users/Roles </a>
     <a md-list-item [routerLink]="['./reporting']"> Reporting </a>
