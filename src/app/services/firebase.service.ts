@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { AngularFire, AngularFireModule, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFire, AngularFireModule, FirebaseObjectObservable, FirebaseListObservable} from 'angularfire2';
 import { NgModule } from '@angular/core';
 import { AuthService } from './auth.service';
 import { EmailSchedulerSettings } from
   'app/dashboard/email-scheduler-dialog/email-scheduler-settings.model';
 @Injectable()
 export class FirebaseService {
+  public visitData: FirebaseListObservable<any>;
   public settings: FirebaseObjectObservable<any>;
   public user: any;
   public userData: FirebaseObjectObservable<any>;
@@ -29,5 +30,16 @@ export class FirebaseService {
   public saveEmailSchedulerSettings(newSettings: EmailSchedulerSettings) {
     this.userData = this.getSettings();
     return this.userData.set({ EmailSchedulerSettings: newSettings });
+  }
+
+  public getVisitData(){
+    this.visitData= this.angularFire.database.list('/visiting',
+      {
+        query:{
+          orderByChild: 'traffic',
+          limitToLast: 10
+        }
+      });
+    return this.visitData;
   }
 }

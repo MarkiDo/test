@@ -24,7 +24,7 @@
     "Settings_saved": "Налаштування успішно збережені!",
     "Save_error": "Під час збереження сталась помилка, повторіть спробу пізніше.",
     "Email_Language": "Мова листування:",
-    "EmptyDatepicker": "Прошу ввести дату",
+    "DatepickerPlaceholder": "рррр/мм/дд",
     "DescriptionPlaceholder": "Введіть опис"
   },
   "LDAP": {

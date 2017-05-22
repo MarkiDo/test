@@ -34,8 +34,7 @@ import {
 import { LDAP_CONFIG, LDAP_CONFIG_CONST } from './dashboard/ldap/ldap.constants';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthProvider } from './services/auth0.config';
-import { DatepickerComponent
-} from './dashboard/email-scheduler-dialog/datepicker/datepicker.component';
+
 import { ReportingComponent } from './administration/reporting/reporting.component';
 import { UsersComponent } from './administration/users/users.component';
 import { FilteringComponent } from './administration/filtering/filtering.component';
@@ -58,7 +57,6 @@ export function HttpLoaderFactory(http: Http) {
     ItaUserLanguageComponent,
     EmailSchedulerDialogComponent,
     LDAPComponent,
-    DatepickerComponent,
     ReportingComponent,
     UsersComponent,
     FilteringComponent

@@ -20,7 +20,7 @@ const appRoutes: Routes = [
     component: AdministrationComponent,
     children: [
     {
-      path:'',
+      path: '',
       redirectTo: 'users', pathMatch: 'full'
     },
     {

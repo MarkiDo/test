@@ -1,7 +1,7 @@
 {
   "HOME": {
     "CFG": "Service Configuration",
-    "ADM": "Adminisration",
+    "ADM": "Administration",
     "ESC": "Email Scheduler",
     "STA": "Status: On",
     "STO": "Status: Off",
@@ -24,7 +24,7 @@
     "Settings_saved": "Settings saved successfully!",
     "Save_error": "Error during settings save, try again later.",
     "Email_Language": "Email Language:",
-    "EmptyDatepicker": "Please enter the date",
+    "DatepickerPlaceholder": "yyyy/mm/dd",
     "DescriptionPlaceholder": "Some description"
   },
   "LDAP": {

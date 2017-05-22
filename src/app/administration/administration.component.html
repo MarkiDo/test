@@ -1,17 +1,13 @@
-
 <md-sidenav-container>
+<button md-icon-button (click)="sidenav.toggle()">
+        <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
+</button>
 <md-sidenav #sidenav mode="side">
-    <button md-icon-button (click)="sidenav.toggle()">
-        <i class="fa fa-times fa-2x" aria-hidden="true"></i>
-    </button>
   <md-nav-list>  
     <a md-list-item [routerLink]="['./users']"> Users/Roles </a>
     <a md-list-item [routerLink]="['./reporting']"> Reporting </a>
     <a md-list-item [routerLink]="['./filtering']"> Filtering </a>
   </md-nav-list>
 </md-sidenav>
-  <button md-icon-button (click)="sidenav.toggle()">
-        <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-    </button>
   <router-outlet></router-outlet>  
 </md-sidenav-container>

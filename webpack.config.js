@@ -45,8 +45,7 @@ module.exports = {
       "script-loader!./node_modules/jquery/dist/jquery.js",
       "script-loader!./node_modules/tether/dist/js/tether.js",
       "script-loader!./node_modules/bootstrap/dist/js/bootstrap.js",
-      "script-loader!./node_modules/hammerjs/hammer.min.js",
-      "script-loader!./node_modules/chart.js/src/Chart.js"
+      "script-loader!./node_modules/hammerjs/hammer.min.js"
     ],
     "styles": [
       "./src/styles/base/_variables.scss",

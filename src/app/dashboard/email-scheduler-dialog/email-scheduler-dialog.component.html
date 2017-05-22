@@ -67,7 +67,7 @@
   </div>
   <div class="settings-form__columns">
       <div class="input-group">
-      <input formControlName="date" ngbDatepicker #dateId="ngbDatepicker">
+      <input formControlName="date" placeholder="{{'Settings.DatepickerPlaceholder'|translate}}" ngbDatepicker #dateId="ngbDatepicker">
       <div class="input-group-addon" (click)="dateId.toggle()">
         <i class="fa fa-calendar" aria-hidden="true"></i>
       </div>
