@@ -1,12 +1,12 @@
 <md-sidenav-container *ngIf="auth.authenticated()">
-<button md-icon-button (click)="sidenav.toggle()">
-        <i class="fa fa-angle-right fa-2x " aria-hidden="true"></i>
+<button md-icon-button (click)="sidenav.toggle()" >
+        <i class="fa fa-angle-left fa-2x " aria-hidden="true"></i>
 </button>
-<md-sidenav #sidenav mode="side" class="admin-border">
+<md-sidenav #sidenav mode="side" opened class="admin-border">
   <md-nav-list>  
-    <a md-list-item [routerLink]="['./users']">{{ 'Administration.UsersRoles' | translate}} </a>
-    <a md-list-item [routerLink]="['./reporting']">{{ 'Administration.Reporting' | translate}}</a>
-    <a md-list-item [routerLink]="['./filtering']">{{ 'Administration.Filtering' | translate}} </a>
+    <a md-list-item [routerLink]="['./usersroles']" class="link">{{ 'Administration.UsersRoles' | translate}} </a>
+    <a md-list-item [routerLink]="['./reporting']" class="link">{{ 'Administration.Reporting' | translate}}</a>
+    <a md-list-item [routerLink]="['./filtering']" class="link">{{ 'Administration.Filtering' | translate}} </a>
   </md-nav-list>
 </md-sidenav>
   <router-outlet></router-outlet>  

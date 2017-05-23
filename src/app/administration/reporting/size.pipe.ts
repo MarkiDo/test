@@ -21,16 +21,13 @@ export class FileSizePipe implements PipeTransform {
     'PB'
   ];
 
-  transform(bytes: any = 0, precision: number = 2 ) : string {
-    if ( isNaN( parseFloat( String(bytes) )) || ! isFinite( bytes ) ) return '?';
-
-    let unit = 0;
-
-    while ( bytes >= 1024 ) {
-      bytes /= 1024;
-      unit ++;
-    }
-
-    return bytes.toFixed( + precision ) + ' ' + this.units[ unit ];
-  }
+public transform(bytes: any = 0, precision: number = 2): string {
+if (isNaN(parseFloat(String(bytes))) || ! isFinite( bytes )) return '?';
+let unit = 0;
+while ( bytes >= 1024 ) {
+  bytes /= 1024;
+  unit ++;
+}
+return bytes.toFixed( + precision ) + ' ' + this.units[ unit ];
+}
 }

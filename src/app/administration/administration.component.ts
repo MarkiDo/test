@@ -7,5 +7,5 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./administration.component.scss']
 })
 export class AdministrationComponent {
-	constructor(private translate: TranslateService, public auth: AuthService) { }
+ constructor(private translate: TranslateService, public auth: AuthService) { }
 }

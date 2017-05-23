@@ -36,11 +36,13 @@ import { TranslateService } from '@ngx-translate/core';
 import { AuthProvider } from './services/auth0.config';
 
 import { ReportingComponent } from './administration/reporting/reporting.component';
-import { UsersComponent } from './administration/users/users.component';
 import { FilteringComponent } from './administration/filtering/filtering.component';
 import { SidebarModule } from 'ng-sidebar';
 import { ChartsModule } from 'ng2-charts';
 import { FileSizePipe } from './administration/reporting/size.pipe';
+import { UsersRolesComponent } from './administration/users-roles/users-roles.component';
+import { UsersComponent } from './administration/users-roles/users/users.component';
+import { RolesComponent } from './administration/users-roles/roles/roles.component';
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http, './src/assets/i18n/', '.json');
 }
@@ -59,9 +61,11 @@ export function HttpLoaderFactory(http: Http) {
     EmailSchedulerDialogComponent,
     LDAPComponent,
     ReportingComponent,
-    UsersComponent,
     FilteringComponent,
-    FileSizePipe
+    FileSizePipe,
+    UsersRolesComponent,
+    UsersComponent,
+    RolesComponent
   ],
   imports: [
     BrowserModule,

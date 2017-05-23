@@ -5,11 +5,7 @@ md-sidenav-container
   .admin-border{
   	border-right: 0.25rem solid $borderColor;
   }
-  .li-ckecked{
-  	background-color: $borderColor;
-  }
-  .box{ 
-  	border-right: $borderColor;
-  	border-bottom: $borderColor;
-  }
+  .link{
+    font-size: 1.125rem;
+}
 }

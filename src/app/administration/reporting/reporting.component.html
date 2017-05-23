@@ -1,4 +1,4 @@
-<p>{{ 'Administration.Reporting' | translate }}</p>
+<p class="link">{{ 'Administration.Reporting' | translate }}</p>
 <div class="row">
   <div class="col-md-6">
     <div  *ngIf="lineChartData.length > 1" style="display: block">
@@ -25,8 +25,8 @@
             (chartClick)="chartClicked($event)"></canvas>
   </div>
   </div>
- <div  *ngIf="pieChartData.length > 1" class="col-md-6">
-    <div style="display: block"> 
+ <div class="col-md-6">
+    <div *ngIf="pieChartData.length > 1" style="display: block"> 
   <canvas baseChart width="20" height="20"
           [data]="pieChartData"
           [labels]="pieChartLabels"
