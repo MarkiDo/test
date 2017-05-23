@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFire, AngularFireModule, FirebaseObjectObservable, FirebaseListObservable} from 'angularfire2';
+import {
+  AngularFire, AngularFireModule, FirebaseObjectObservable, FirebaseListObservable
+        } from 'angularfire2';
 import { NgModule } from '@angular/core';
 import { AuthService } from './auth.service';
 import { EmailSchedulerSettings } from
@@ -32,12 +34,12 @@ export class FirebaseService {
     return this.userData.set({ EmailSchedulerSettings: newSettings });
   }
 
-  public getVisitData(){
-    this.visitData= this.angularFire.database.list('/visiting',
+  public getVisitData() {
+    this.visitData = this.angularFire.database.list('/visting',
       {
-        query:{
-          orderByChild: 'traffic',
-          limitToLast: 10
+        query: {
+          orderByChild: 'website',
+          limitToFirst: 10
         }
       });
     return this.visitData;

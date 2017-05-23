@@ -1,19 +1,15 @@
 @import '../../styles/base/_variables.scss';
 md-sidenav-container
 { 
-  height:80rem
-}
-.admin-border{
-	border-right: 0.25rem solid $borderColor
-}
-.li-ckecked{
-  background-color: $borderColor;
-}
-.li-checked:hover{
-	box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
-}
-.box{ 
-  border-right: $borderColor;
-  border-bottom: $borderColor;
-  	
+  height:80rem;
+  .admin-border{
+  	border-right: 0.25rem solid $borderColor;
+  }
+  .li-ckecked{
+  	background-color: $borderColor;
+  }
+  .box{ 
+  	border-right: $borderColor;
+  	border-bottom: $borderColor;
+  }
 }

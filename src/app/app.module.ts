@@ -40,6 +40,7 @@ import { UsersComponent } from './administration/users/users.component';
 import { FilteringComponent } from './administration/filtering/filtering.component';
 import { SidebarModule } from 'ng-sidebar';
 import { ChartsModule } from 'ng2-charts';
+import { FileSizePipe } from './administration/reporting/size.pipe';
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http, './src/assets/i18n/', '.json');
 }
@@ -59,7 +60,8 @@ export function HttpLoaderFactory(http: Http) {
     LDAPComponent,
     ReportingComponent,
     UsersComponent,
-    FilteringComponent
+    FilteringComponent,
+    FileSizePipe
   ],
   imports: [
     BrowserModule,
