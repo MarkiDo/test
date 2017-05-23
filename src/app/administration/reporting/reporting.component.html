@@ -1,6 +1,7 @@
+<p>{{ 'Administration.Reporting' | translate }}</p>
 <div class="row">
   <div class="col-md-6">
-    <div  *ngIf="lineChartData.length > 1" style="display: block;">
+    <div  *ngIf="lineChartData.length > 1" style="display: block">
     <canvas baseChart width="20" height="20"
                 [data]="lineChartData"
                 [labels]="lineChartLabels"
